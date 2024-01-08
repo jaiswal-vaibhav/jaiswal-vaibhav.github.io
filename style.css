@@ -5,6 +5,9 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 header {
@@ -17,7 +20,7 @@ header {
     align-items: center;
 }
 
-.header-right {
+.header-right, .social-icons {
     display: flex;
     align-items: center;
     padding-right: 20px;
@@ -52,76 +55,41 @@ nav ul li a:hover {
 
 /* Intro Section Styles */
 .intro-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
+    margin: 20px 0;
 }
 
 .profile-pic {
-    width: 500px;
-    height: 500px;
+    width: 150px; /* Adjust as needed */
+    height: 150px; /* Adjust as needed */
     border-radius: 50%;
-    flex-shrink: 0; /* Prevents resizing of image */
+    margin: 0 auto; /* Centers the image */
+    display: block; /* Makes it a block-level element, allowing for margin auto to work */
 }
 
-.about-me {
-    width: 50%;
-    padding: 20px;
+.info-container h1 {
+    margin: 10px 0;
+    font-size: 1.5em;
 }
 
-/* Content Sections */
-.content-section {
-    margin-bottom: 20px;
+.info-container .designation {
+    margin: 5px 0; /* Adds some space between the name and designation */
 }
 
-.achievements-list, .content-section ol {
-    list-style-type: none;
-    padding: 0;
+.social-icons {
+    justify-content: center;
+    gap: 10px; /* Adds space between icons */
+    margin-top: 10px; /* Space between designation and icons */
 }
 
-.achievements-list li, .content-section ol li {
-    margin-bottom: 10px;
-    color: #4a4a4a;
-}
-
-/* Hidden Sections */
-.other-sections section {
-    display: none;
-}
-
-.other-sections section#about {
-    display: block;
-}
-#about {
-    display: block;
-}
-.hidden {
-    display: none;
-}
-
-/* Light Theme Styles */
-.light-theme {
-    background-color: #f8f8f8;
-    color: #4a4a4a;
-}
-
-.light-theme header {
-    background-color: #ffffff;
-    color: #4a4a4a;
+.social-icons img {
+    width: 24px; /* Adjust icon size as needed */
+    height: 24px; /* Adjust icon size as needed */
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .profile-content, .intro-section {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .header-right {
-        padding-top: 10px;
-    }
-
-    nav ul {
+    header, nav ul {
         flex-direction: column;
         align-items: center;
     }
@@ -131,19 +99,6 @@ nav ul li a:hover {
     }
 }
 
-html, body {
-    height: 100%;
-    margin: 0;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-}
-
-main {
-    flex: 1;
-}
 footer {
     background-color: #333;
     color: white;
@@ -151,16 +106,7 @@ footer {
     padding: 10px 0;
 }
 
-/* Other Sections - Initially hidden */
-.other-sections section {
-    display: none;
-}
-
-/* When a section is active or needs to be shown */
-.other-sections section.active {
-    display: block;
-}
-
+/* Education Section */
 #education {
     margin-top: 20px;
 }
@@ -191,77 +137,15 @@ footer {
     line-height: 1.4;
 }
 
-.card {
-  text-align: center;
-  background: white;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  max-width: 300px;
-  margin: auto;
+/* Other Sections */
+.other-sections section {
+    display: none;
 }
 
-.image-container img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  object-fit: cover;
+.other-sections section.active {
+    display: block;
 }
 
-.info h1 {
-  margin: 10px 0;
-  font-size: 1.5em;
+main {
+    flex: 1;
 }
-
-.social-icons {
-  margin-top: 10px;
-}
-
-.social-icons a {
-  margin: 0 5px;
-  display: inline-block;
-}
-
-.social-icons img {
-  width: 24px;
-  height: 24px;
-}
-
-.intro-section {
-    text-align: center;
-    /* Add any additional styling you need for this section */
-}
-
-.image-container img {
-    width: 150px; /* Adjust as needed */
-    height: 150px; /* Adjust as needed */
-    border-radius: 50%;
-    margin: 0 auto; /* Centers the image */
-    display: block; /* Makes it a block-level element, allowing for margin auto to work */
-}
-
-.info-container {
-    /* Container for the info to allow easy centering */
-}
-
-.designation {
-    margin: 5px 0; /* Adds some space between the name and designation */
-}
-
-.social-icons {
-    /* Center the icons */
-    display: flex;
-    justify-content: center;
-    gap: 10px; /* Adds space between icons */
-    margin-top: 10px; /* Space between designation and icons */
-}
-
-.social-icons a {
-    /* Styling for the anchor tags containing the icons */
-}
-
-.social-icons img {
-    width: 24px; /* Adjust icon size as needed */
-    height: 24px; /* Adjust icon size as needed */
-}
-
