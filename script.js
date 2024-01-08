@@ -8,21 +8,22 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     const navLinks = document.querySelectorAll('nav ul li a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
+// When a nav link is clicked
+navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
 
-            // Hide all sections
-            document.querySelectorAll('.other-sections section').forEach(section => {
-                section.classList.add('hidden');
-            });
-
-            // Show only the selected section
-            const sectionId = this.getAttribute('href').substring(1);
-            const section = document.getElementById(sectionId);
-            if (section) {
-                section.classList.remove('hidden');
-            }
+        // Hide all sections
+        document.querySelectorAll('.other-sections section').forEach(section => {
+            section.classList.remove('active');
         });
+
+        // Show only the selected section
+        const sectionId = this.getAttribute('href').substring(1);
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.classList.add('active');
+        }
     });
 });
+
