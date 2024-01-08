@@ -50,6 +50,12 @@ header nav ul li a:hover {
     padding: 20px;
 }
 
+.profile-content {
+    display: flex;
+    align-items: start;
+    padding: 20px;
+}
+
 .profile-pic {
     width: 100px; /* Adjust the width as needed */
     height: 100px; /* Adjust the height as needed */
