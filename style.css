@@ -150,3 +150,14 @@ footer {
     text-align: center;
     padding: 10px 0;
 }
+
+/* Other Sections - Initially hidden */
+.other-sections section {
+    display: none;
+}
+
+/* When a section is active or needs to be shown */
+.other-sections section.active {
+    display: block;
+}
+
