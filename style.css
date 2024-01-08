@@ -1,3 +1,10 @@
+h1 {
+    font-size: 36px; /* Adjust the size as needed */
+    font-weight: bold; /* Ensures it's bold */
+    color: #333; /* Adjust color as needed */
+    margin-left: 20px; /* Spacing from the left edge */
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -17,7 +24,7 @@ header nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    text-align: center;
+    /* Adjust the layout as needed */
 }
 
 header nav ul li {
