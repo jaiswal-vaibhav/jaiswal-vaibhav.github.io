@@ -161,3 +161,33 @@ footer {
     display: block;
 }
 
+#education {
+    margin-top: 20px;
+}
+
+.education-item {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.education-year {
+    flex-basis: 20%;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.education-details {
+    flex-basis: 80%;
+}
+
+.education-details h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.education-details p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
