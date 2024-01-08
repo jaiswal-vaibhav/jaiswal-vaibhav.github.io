@@ -110,6 +110,29 @@ footer {
     color: #4a4a4a; /* Dark gray for text */
 }
 
+
+.intro-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-pic-large {
+    width: 50%;
+    /* Adjust the size and style as needed */
+}
+
+.about-me {
+    width: 50%;
+    padding: 20px;
+    /* Additional styling */
+}
+
+.other-sections .hidden {
+    display: none;
+}
+
+
 /* Media Query for Responsive Design */
 @media (max-width: 768px) {
     .profile-content {
