@@ -1,42 +1,58 @@
 body {
     font-family: Arial, sans-serif;
-}
-
-header, footer {
-    background-color: #4CAF50;
-    color: white;
-    text-align: center;
-    padding: 1em 0;
-}
-
-nav ul {
-    list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+header {
     background-color: #333;
+    color: #fff;
+    padding: 10px 0;
 }
 
-nav ul li {
-    float: left;
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
 }
 
-nav ul li a {
-    display: block;
+header nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.profile-pic {
+    width: 150px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.about-text {
+    max-width: 500px;
+}
+
+footer {
+    background-color: #333;
     color: white;
     text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-nav ul li a:hover {
-    background-color: #111;
-}
-
-main {
-    margin: 1em;
-}
-
-section {
-    padding: 1em 0;
+    padding: 10px 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
