@@ -50,13 +50,6 @@ nav ul li a:hover {
     color: #2a9d8f; /* Teal hover effect */
 }
 
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-}
-
 /* Intro Section Styles */
 .intro-section {
     display: flex;
@@ -136,4 +129,24 @@ footer {
     nav ul li {
         margin-bottom: 10px;
     }
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
 }
