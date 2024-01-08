@@ -67,6 +67,16 @@ header nav ul li a:hover {
     max-width: 500px;
 }
 
+.achievements-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.achievements-list li {
+    margin-bottom: 10px;
+    color: #4a4a4a; /* Dark gray text, you can choose a color as per your theme */
+}
+
 footer {
     background-color: #333333; /* Darker gray for the footer */
     color: white;
