@@ -86,3 +86,25 @@ footer {
     bottom: 0;
     width: 100%;
 }
+/* Default light theme styles */
+body {
+    background-color: white;
+    color: black;
+}
+
+/* Dark theme styles */
+.dark-theme {
+    background-color: black;
+    color: white;
+}
+
+.header-right {
+    float: right;
+    padding: 10px;
+}
+
+#search-bar {
+    padding: 5px;
+    margin-right: 10px;
+}
+
