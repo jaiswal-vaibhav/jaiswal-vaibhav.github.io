@@ -78,14 +78,13 @@ header nav ul li a:hover {
 }
 
 footer {
-    background-color: #333333; /* Darker gray for the footer */
+    background-color: #333;
     color: white;
     text-align: center;
     padding: 10px 0;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+    /* Remove position: absolute; or position: fixed; if they exist */
 }
+
 /* Default light theme styles */
 body {
     background-color: white;
@@ -106,5 +105,16 @@ body {
 #search-bar {
     padding: 5px;
     margin-right: 10px;
+}
+
+.content-section {
+    padding: 20px;
+    margin: 10px 0;
+    /* Add more styling as needed */
+}
+
+/* Ensure the main content allows for vertical layout */
+main {
+    display: block; /* Or simply remove display property if it's set to flex or grid */
 }
 
