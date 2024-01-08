@@ -61,8 +61,8 @@ nav ul li a:hover {
 }
 
 .profile-pic {
-    width: 1000px; /* Adjust as needed */
-    height: 1000px; /* Adjust as needed */
+    width: 600px; /* Adjust as needed */
+    height: 600px; /* Adjust as needed */
     border-radius: 50%;
     margin: 0 auto; /* Centers the image */
     display: block; /* Makes it a block-level element, allowing for margin auto to work */
