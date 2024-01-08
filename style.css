@@ -99,7 +99,9 @@ footer {
 .other-sections section#about {
     display: block;
 }
-
+#about {
+    display: block;
+}
 .hidden {
     display: none;
 }
