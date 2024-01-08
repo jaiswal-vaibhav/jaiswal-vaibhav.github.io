@@ -2,7 +2,8 @@
 body {
     background-color: black; /* Dark theme by default */
     color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Roboto', sans-serif; /* Updated font family */
+    font-size: 18px; /* Increased font size */
     margin: 0;
     padding: 0;
     display: flex;
@@ -146,6 +147,43 @@ footer {
     display: block;
 }
 
+/* Now let's increase the size for headers and other elements accordingly */
+h1 {
+    font-size: 2.5em; /* 36px if the base size is 14px */
+}
+
+h2 {
+    font-size: 2em; /* 28px if the base size is 14px */
+}
+
+h3 {
+    font-size: 1.75em; /* 24.5px if the base size is 14px */
+}
+
+p, li, a { /* For text in paragraphs, list items, and anchor tags */
+    font-size: 1em; /* 18px for normal text */
+}
+
+/* For larger screens, you might want to increase the base font size */
+@media (min-width: 992px) {
+    body {
+        font-size: 20px; /* Slightly larger text for larger screens */
+    }
+
+    h1 {
+        font-size: 3em;
+    }
+
+    h2 {
+        font-size: 2.25em;
+    }
+
+    h3 {
+        font-size: 2em;
+    }
+}
 main {
     flex: 1;
 }
+
+
