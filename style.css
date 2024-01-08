@@ -1,9 +1,10 @@
+/* Dark theme styles by default */
 body {
+    background-color: black;
+    color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    color: #4a4a4a; /* Dark gray text */
-    background-color: #f8f8f8; /* Light gray background */
 }
 
 header {
@@ -97,10 +98,16 @@ footer {
     padding: 10px 0;
 }
 
-/* Dark theme styles */
-.dark-theme {
-    background-color: black;
-    color: white;
+/* Light theme styles */
+.light-theme {
+    background-color: #f8f8f8; /* Light gray background */
+    color: #4a4a4a; /* Dark gray text */
+}
+
+/* Specific adjustments for the light theme if needed */
+.light-theme header {
+    background-color: #ffffff; /* White background for the header */
+    color: #4a4a4a; /* Dark gray for text */
 }
 
 /* Media Query for Responsive Design */
