@@ -153,3 +153,18 @@ footer {
         margin-bottom: 10px;
     }
 }
+
+
+/* ... existing styles ... */
+
+.other-sections section {
+    display: none;
+}
+
+.other-sections section#about {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
