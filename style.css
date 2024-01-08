@@ -67,7 +67,7 @@ footer {
 .profile-pic {
     width: 500px;
     height: 500px;
-    border-radius: 30%;
+    border-radius: 50%;
     flex-shrink: 0; /* Prevents resizing of image */
 }
 
