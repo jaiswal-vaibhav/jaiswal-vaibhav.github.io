@@ -210,4 +210,33 @@ main {
 
 .left-column, .right-column {
     flex: 1;
+    padding: 20px; /* Adds padding inside each column */
 }
+
+.right-column {
+    max-width: 600px; /* Adjust as needed for the desired width */
+    margin: auto; /* Centers the content */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically centers the content in the column */
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Rest of your CSS... */
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+
+    .left-column, .right-column {
+        max-width: none;
+        margin: 0; /* Resets the margin for smaller screens */
+    }
+}
+
