@@ -182,3 +182,25 @@ footer {
 main {
     flex: 1;
 }
+
+main {
+    display: flex;
+    flex-direction: row;
+}
+
+.left-column, .right-column {
+    flex: 1;
+}
+
+/* You might want to adjust the image size and other elements for the two-column layout */
+.image-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+}
