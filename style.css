@@ -1,9 +1,9 @@
 /* General Styles */
 body {
-    background-color: black; /* Dark theme by default */
+    background-color: black; /* Default dark theme */
     color: white;
-    font-family: 'Roboto', sans-serif; /* Updated font family */
-    font-size: 18px; /* Increased font size */
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
     margin: 0;
     padding: 0;
     display: flex;
@@ -61,11 +61,11 @@ nav ul li a:hover {
 }
 
 .profile-pic {
-    width: 200px; /* Adjust as needed */
-    height: 200px; /* Adjust as needed */
+    width: 200px;
+    height: 200px;
     border-radius: 30%;
-    margin: 0 auto; /* Centers the image */
-    display: block; /* Makes it a block-level element, allowing for margin auto to work */
+    margin: 0 auto;
+    display: block;
 }
 
 .info-container h1 {
@@ -74,40 +74,21 @@ nav ul li a:hover {
 }
 
 .info-container .designation {
-    margin: 5px 0; /* Adds some space between the name and designation */
+    margin: 5px 0;
 }
 
 .social-icons {
     justify-content: center;
-    gap: 10px; /* Adds space between icons */
-    margin-top: 10px; /* Space between designation and icons */
+    gap: 10px;
+    margin-top: 10px;
 }
 
 .social-icons img {
-    width: 24px; /* Adjust icon size as needed */
-    height: 24px; /* Adjust icon size as needed */
+    width: 24px;
+    height: 24px;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    header, nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav ul li {
-        margin-bottom: 10px;
-    }
-}
-
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-}
-
-/* Education Section */
+/* Education Section Styles */
 #education {
     margin-top: 20px;
 }
@@ -138,36 +119,50 @@ footer {
     line-height: 1.4;
 }
 
-/* Other Sections */
-.other-sections section {
-    display: none;
+/* Responsive Design */
+@media (max-width: 768px) {
+    header, nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin-bottom: 10px;
+    }
 }
 
-.other-sections section.active {
-    display: block;
+/* Light Theme Styles */
+.light-theme {
+    background-color: white; /* Light theme background */
+    color: black; /* Text color for light theme */
 }
 
-/* Now let's increase the size for headers and other elements accordingly */
-h1 {
-    font-size: 2.5em; /* 36px if the base size is 14px */
+.light-theme header {
+    background-color: #f0f0f0;
+    color: black;
 }
 
-h2 {
-    font-size: 2em; /* 28px if the base size is 14px */
+.light-theme footer {
+    background-color: #f0f0f0;
+    color: black;
 }
 
-h3 {
-    font-size: 1.75em; /* 24.5px if the base size is 14px */
+.light-theme nav ul li a {
+    color: black;
 }
 
-p, li, a { /* For text in paragraphs, list items, and anchor tags */
-    font-size: 1em; /* 18px for normal text */
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
 }
 
-/* For larger screens, you might want to increase the base font size */
+/* Additional Media Queries for Larger Screens */
 @media (min-width: 992px) {
     body {
-        font-size: 20px; /* Slightly larger text for larger screens */
+        font-size: 20px; /* Larger text for bigger screens */
     }
 
     h1 {
@@ -182,27 +177,8 @@ p, li, a { /* For text in paragraphs, list items, and anchor tags */
         font-size: 2em;
     }
 }
+
+/* Ensuring main content takes up available space */
 main {
     flex: 1;
 }
-
-/* Light Theme Styles */
-.light-theme {
-    background-color: white; /* Light background */
-    color: black; /* Dark text for light background */
-}
-
-.light-theme header {
-    background-color: #f0f0f0; /* Lighter header background */
-    color: black; /* Dark text for light header */
-}
-
-.light-theme footer {
-    background-color: #f0f0f0; /* Lighter footer background */
-    color: black; /* Dark text for light footer */
-}
-
-.light-theme nav ul li a {
-    color: black; /* Dark text for navigation links */
-}
-
