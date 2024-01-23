@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
     const searchBar = document.getElementById('search-bar');
     const searchButton = document.getElementById('search-button'); // make sure you have this button in your HTML
 
@@ -51,5 +52,4 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
         console.log("Search button not found");
     }
-});
 });
