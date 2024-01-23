@@ -32,3 +32,25 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+    const searchBar = document.getElementById('search-bar');
+    const searchButton = document.getElementById('search-button'); // make sure you have this button in your HTML
+
+    if (searchButton) {
+        searchButton.addEventListener('click', function() {
+            const searchText = searchBar.value.toLowerCase();
+            const paragraphs = document.querySelectorAll('p');
+
+            paragraphs.forEach(p => {
+                if (p.textContent.toLowerCase().includes(searchText)) {
+                    // For simplicity, just scrolling to the first match
+                    p.scrollIntoView();
+                    p.style.backgroundColor = 'yellow'; // highlighting the match
+                    return; // remove this line if you want to highlight all matches
+                }
+            });
+        });
+    } else {
+        console.log("Search button not found");
+    }
+});
