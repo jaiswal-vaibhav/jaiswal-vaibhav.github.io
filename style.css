@@ -214,7 +214,7 @@ main {
 }
 
 .right-column {
-    max-width: 600px; /* Adjust as needed for the desired width */
+    max-width: 900px; /* Adjust as needed for the desired width */
     margin: auto; /* Centers the content */
     display: flex;
     flex-direction: column;
