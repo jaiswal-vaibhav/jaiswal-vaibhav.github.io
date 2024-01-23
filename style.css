@@ -186,4 +186,23 @@ main {
     flex: 1;
 }
 
+/* Light Theme Styles */
+.light-theme {
+    background-color: white; /* Light background */
+    color: black; /* Dark text for light background */
+}
+
+.light-theme header {
+    background-color: #f0f0f0; /* Lighter header background */
+    color: black; /* Dark text for light header */
+}
+
+.light-theme footer {
+    background-color: #f0f0f0; /* Lighter footer background */
+    color: black; /* Dark text for light footer */
+}
+
+.light-theme nav ul li a {
+    color: black; /* Dark text for navigation links */
+}
 
