@@ -68,6 +68,18 @@ nav ul li a:hover {
     display: block;
 }
 
+#about {
+    text-align: justify;
+}
+
+#about h2 {
+    text-align: left; /* Assuming you want the heading aligned to the left */
+}
+
+#about p {
+    line-height: 1.6; /* Optional: Adjust line height for better readability */
+}
+
 .info-container h1 {
     margin: 10px 0;
     font-size: 1.5em;
