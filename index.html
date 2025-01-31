@@ -4,7 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Vaibhav Jaiswal</title>
-  <!-- Basic CSS Reset + Style (You can link your own style.css) -->
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Inline CSS -->
   <style>
     /* Basic reset and layout */
     * {
@@ -12,14 +14,18 @@
       padding: 0; 
       box-sizing: border-box;
     }
+
     body {
-      font-family: Arial, sans-serif; 
-      background: #f5f5f5; 
+      font-family: 'Roboto', sans-serif; 
+      background-color: #f5f5f5; 
       color: #333; 
       min-height: 100vh;
       display: flex; 
       flex-direction: column;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
+
+    /* Header */
     header {
       background: #222; 
       color: #fff; 
@@ -28,9 +34,44 @@
       align-items: center; 
       justify-content: space-between;
     }
+    /* Left side is hidden (commented out) in snippet, so let's keep an empty area or optional H1 */
     header h1 {
       font-size: 1.2rem;
     }
+
+    /* Header Right (Search + Theme Toggle) */
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    #search-bar {
+      padding: 6px 8px;
+      border: 1px solid #555;
+      border-radius: 4px;
+      background-color: #444;
+      color: #fff;
+    }
+    #search-bar:focus {
+      outline: none;
+      border-color: #2a9d8f; /* Teal accent on focus */
+    }
+
+    #theme-toggle {
+      background-color: #444;
+      color: #fff;
+      border: 1px solid #555;
+      border-radius: 4px;
+      padding: 6px 12px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    #theme-toggle:hover {
+      background-color: #2a9d8f; 
+    }
+
+    /* Navigation */
     nav ul {
       list-style: none; 
       display: flex; 
@@ -46,7 +87,7 @@
       color: #2a9d8f; /* teal accent */
     }
 
-    /* Content sections */
+    /* Main container for tabbed sections */
     main {
       flex: 1; 
       display: flex; 
@@ -55,10 +96,10 @@
       padding: 20px;
     }
 
-    /* Each "tab" section */
+    /* Section styling (all hidden except the active one) */
     .section {
-      display: none; /* hide by default */
-      max-width: 800px;
+      display: none; 
+      max-width: 900px;
       width: 100%;
       background: #fff;
       padding: 20px;
@@ -69,104 +110,189 @@
       display: block;
     }
 
-    /* Home (landing) section styling */
-    .home-content h1 {
-      margin-bottom: 10px;
-      font-size: 1.8rem;
+    /* Intro (Home) Section */
+    .intro-section {
       text-align: center;
+      margin-bottom: 20px;
     }
-    .home-content img {
-      display: block;
-      margin: 0 auto 20px;
-      width: 200px; 
-      height: 200px;
-      object-fit: cover;
+    .profile-pic {
+      width: 250px;
+      height: 250px;
       border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
       border: 2px solid #2a9d8f;
     }
-    .home-content .designation {
-      text-align: center;
-      margin-bottom: 20px;
+    .designation {
       font-weight: bold;
       color: #555;
-    }
-    .social-links {
-      display: flex; 
-      justify-content: center; 
-      gap: 20px; 
       margin-bottom: 20px;
     }
-    .social-links a {
-      color: #2a9d8f;
-      text-decoration: none;
-      font-weight: bold;
+    .social-icons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin-bottom: 20px;
     }
-    .social-links a:hover {
-      text-decoration: underline;
-    }
-    .home-content .about {
-      line-height: 1.6;
-      text-align: justify;
+    .social-icons img {
+      width: 28px;
+      height: 28px;
     }
 
+    /* Section Titles */
+    .section h2 {
+      margin-bottom: 10px;
+      border-bottom: 2px solid #2a9d8f;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    /* Some spacing and formatting */
+    p, li {
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    ol {
+      margin-left: 20px;
+    }
+
+    /* Education items */
+    .education-item {
+      display: flex;
+      margin-bottom: 20px;
+    }
+    .education-year {
+      flex-basis: 20%;
+      font-weight: bold;
+      color: #2a9d8f;
+    }
+    .education-details {
+      flex-basis: 80%;
+    }
+    .education-details h3 {
+      margin-bottom: 5px;
+    }
+
+    /* Teaching interns list */
+    .supervised-interns {
+      list-style: none;
+      margin-left: 0;
+      padding-left: 0;
+    }
+    .supervised-interns li {
+      margin-bottom: 10px;
+    }
+    .supervised-interns .year {
+      color: #2a9d8f;
+      margin-right: 5px;
+      font-weight: bold;
+    }
+
+    /* Footer */
     footer {
       background: #222; 
       color: #fff; 
       text-align: center; 
       padding: 10px;
     }
+
+    /* Light Theme */
+    .light-theme {
+      background-color: #fafafa; 
+      color: #333;
+    }
+    .light-theme header {
+      background-color: #eaeaea;
+      color: #333;
+    }
+    .light-theme #search-bar {
+      background-color: #fff;
+      color: #333;
+      border-color: #ccc;
+    }
+    .light-theme #theme-toggle {
+      background-color: #eaeaea;
+      color: #333;
+    }
+    .light-theme nav ul li a {
+      color: #333;
+    }
+    .light-theme nav ul li a:hover {
+      color: #2a9d8f;
+    }
+    .light-theme .section {
+      background-color: #fff;
+      color: #333;
+    }
+    .light-theme footer {
+      background-color: #eaeaea;
+      color: #333;
+    }
   </style>
 </head>
 <body>
-
   <header>
-    <h1>Vaibhav Jaiswal</h1>
-    <!-- Navigation menu (Tabs) -->
+    <!-- Left side could be your logo/title if desired -->
+    <div>
+      <!-- <h1>Vaibhav Jaiswal</h1> -->
+    </div>
+    <div class="header-right">
+      <input type="text" id="search-bar" placeholder="Search...">
+      <button id="theme-toggle">Switch to Light Theme</button>
+    </div>
     <nav>
       <ul>
-        <!-- data-section attribute tells our JS which section to show -->
+        <!-- data-section attribute => controls which section to show -->
         <li><a href="#" data-section="home">Home</a></li>
         <li><a href="#" data-section="education">Education</a></li>
         <li><a href="#" data-section="teaching">Teaching</a></li>
         <li><a href="#" data-section="publications">Publications</a></li>
-        <li><a href="#" data-section="research">Research</a></li>
+        <li><a href="#" data-section="research">Research Topics</a></li>
         <li><a href="#" data-section="achievements">Achievements</a></li>
-        <li><a href="#" data-section="contact">Contact</a></li>
+        <li><a href="#" data-section="contact">Contact Me</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <!-- HOME / LANDING SECTION -->
+    <!-- HOME / INTRO SECTION -->
     <section id="home" class="section active">
-      <div class="home-content">
-        <!-- Name repeated if you wish (remove the second if not needed) -->
+      <div class="intro-section">
+        <img src="assets/Photo_VJ.jpg" alt="Vaibhav Jaiswal" class="profile-pic">
         <h1>Vaibhav Jaiswal</h1>
-        
-        <img src="assets/Photo_VJ.jpg" alt="Vaibhav Jaiswal">
-        
         <p class="designation">Research Engineer at IRSN, France</p>
-        
-        <div class="social-links">
-          <a href="mailto:vaibhav.jaiswal@irsn.fr">Email</a>
-          <a href="https://scholar.google.com/citations?user=OXhBC3QAAAAJ&hl=en" target="_blank">Google Scholar</a>
-          <a href="https://www.linkedin.com/in/vaibhav-jaiswal/" target="_blank">LinkedIn</a>
+        <div class="social-icons">
+          <a href="mailto:vaibhav.jaiswal@irsn.fr">
+            <img src="assets/message_icon.png" alt="Email">
+          </a>
+          <a href="https://scholar.google.com/citations?user=OXhBC3QAAAAJ&hl=en">
+            <img src="assets/google_scholar_icon.png" alt="Google Scholar">
+          </a>
+          <a href="https://www.linkedin.com/in/vaibhav-jaiswal/">
+            <img src="assets/linkedin_icon.png" alt="LinkedIn">
+          </a>
         </div>
-
-        <h2>About Me</h2>
-        <p class="about">
-          Dr. Vaibhav Jaiswal is a research engineer at the French Institute for Radiological
-          Protection and Nuclear Safety (IRSN), France. In this capacity, he leverages his
-          expertise in the development of nuclear cross section data and Monte Carlo codes,
-          with a specific focus on thermal scattering cross section data for moderator materials.
-          His expansive knowledge of nuclear data is instrumental in his work on Monte Carlo
-          code development at IRSN, marking a significant contribution to the institute's
-          research capabilities.
-        </p>
       </div>
+      <!-- About Me -->
+      <h2>About Me</h2>
+      <p>
+        Dr. Vaibhav Jaiswal is a research engineer at the French Institute for Radiological Protection and Nuclear Safety (IRSN), France. In this capacity, he leverages his expertise in the development of nuclear cross section data and Monte Carlo codes, with a specific focus on thermal scattering cross section data for moderator materials. His expansive knowledge of nuclear data is instrumental in his work on Monte Carlo code development at IRSN, marking a significant contribution to the institute's research capabilities.
+      </p>
+      <p>
+        Beginning his academic pursuit at the University of Delhi, India, Dr. Jaiswal achieved a bachelor's degree in Physics. This foundation led him to attain an M. Tech degree in Nuclear Science and Technology at the same university. With a desire to broaden his understanding and deepen his exposure to nuclear sciences, he relocated to France. Here, he earned a specialized master’s degree in Nuclear Engineering from the National Institute for Nuclear Science and Technology (INSTN), subsequently securing a PhD from the University of Lille. His research focus on thermal scattering cross section data development has set a robust foundation for his ongoing research endeavors.
+      </p>
+      <p>
+        Dr. Jaiswal's professional journey is highlighted by numerous time-of-flight experiments and atomistic simulations, which have proven crucial in generating thermal scattering cross section data. His meticulous and focused approach has resulted in significant contributions in the nuclear science domain.
+      </p>
+      <p>
+        Supplementing his experimental and simulation work, Dr. Jaiswal is an active participant in the Joint Evaluated Fission and Fusion (JEFF) community. His involvement with JEFF showcases his commitment to scientific collaboration, indicating his consistent contributions to the wider nuclear science community.
+      </p>
     </section>
 
-    <!-- EDUCATION SECTION (Initially Hidden) -->
+    <!-- EDUCATION SECTION -->
     <section id="education" class="section">
       <h2>Education</h2>
       <!-- Education Item 1 -->
@@ -210,34 +336,101 @@
       </div>
     </section>
 
-    <!-- TEACHING SECTION (Initially Hidden) -->
+    <!-- TEACHING SECTION -->
     <section id="teaching" class="section">
-      <h2>Teaching</h2>
-      <p>Place your teaching details here. (Hidden by default)</p>
+      <h2>Teaching & Supervision</h2>
+      <ul class="supervised-interns">
+        <li>
+          <span class="year">2019:</span>
+          <a href="link-to-edwin-manuscript" target="_blank">Edwin Cordova</a>
+        </li>
+        <li>
+          <span class="year">2020:</span>
+          <a href="link-to-bashir-manuscript" target="_blank">Bashir Hassaine</a>
+        </li>
+        <li>
+          <span class="year">2023:</span>
+          <a href="link-to-guillaume-manuscript" target="_blank">Guillaume Boutes</a>
+        </li>
+        <li>
+          <span class="year">2023:</span>
+          <a href="link-to-pierre-thesis" target="_blank">PhD Thesis of Pierre Sole</a>
+        </li>
+      </ul>
     </section>
 
-    <!-- PUBLICATIONS SECTION (Initially Hidden) -->
+    <!-- PUBLICATIONS SECTION -->
     <section id="publications" class="section">
       <h2>Publications</h2>
-      <p>Place your publications here. (Hidden by default)</p>
+      <ol>
+        <li>Vaibhav Jaiswal, “An Optimization Approach to Improve Thermal Scattering Law Using Experimental Total Cross Section Data” (submitted), International Conference on Physics of Reactors (PHYSOR), April 21–24, San Francisco, 2024.</li>
+        <li>Pierre Sole, Vaibhav Jaiswal and Cedric Jouanne, “On the Possible use of Propagation of Resonance Parameters Uncertainties Using the R-Matrix Formalism” (submitted), International Conference on Physics of Reactors (PHYSOR), April 21–24, San Francisco, 2024.</li>
+        <li>Pierre Sole, Vaibhav Jaiswal, Cédric Jouanne, and Vivian Salino, “Assessment of covariance processing with GAIA for nuclear data uncertainty propagation” (submitted), International Workshop On Nuclear Data Evaluation for Reactor Applications (WONDER-2023), 2023.</li>
+        <li>N. Leclaire and V. Jaiswal, “The Plutonium Temperature Effect Program”, Journal of Nuclear Engineering 4 (3), 535-551, 2023.</li>
+        <li>Vaibhav Jaiswal et al., "Development of Thermal Scattering Law for Hydrogen Fluoride for Criticality Safety Applications", Nuclear Criticality Safety Division Topical Meeting (NCSD), Anaheim, CA, June 12-16, Pages 47-56, 2022.</li>
+        <li>Luiz Leal, Nicolas Leclaire and Vaibhav Jaiswal, “Impact of Missing Resonance Levels on Benchmark Calculations”, Nuclear Criticality Safety Division Topical Meeting (NCSD), Anaheim, CA, June 12-16, Pages 30-37, 2022.</li>
+        <li>Arthur Pignet, Luiz Leal and Vaibhav Jaiswal, “Cross Section Doppler Broadening prediction using Physically Informed Deep Neural Networks”, PHYSOR 2022, Pittsburgh, Pennsylvania, USA, May 15th -20th, 2022.</li>
+        <li>Romain Vuiart, Mariya Brovchenko, Julien Taforeau, Vaibhav Jaiswal and Eric Dumonteil, "A versatile methodology for reactor pressure vessel aging assessments", Nuclear Science and Engineering, Vol. 196, No. 4, 455-477, 2021.</li>
+        <li>R. Ichou, V. Jaiswal, L. Leal, F. Réal and V. Vallet, "Testing thermal scattering law for light water at 600 K using VESTA 2.2.0 depletion calculations", ICNC 2019 - 11th International conference on Nuclear Criticality Safety, Paris, France, 2019.</li>
+        <li>Vaibhav Jaiswal, Luiz Leal, and Alexander I. Kolesnikov, "Analysis of the time-of-flight scattering cross section data for light water measured at the SEQUOIA spectrometer", in Proc. Int. Conf. on Nuclear Data for Science and Technology, Beijing, China, 2019.</li>
+        <li>Luiz Leal, Vaibhav Jaiswal, and Alexander I. Kolesnikov, "High-resolution neutron time-of-flight measurements for light water at the Spallation Neutron Source (SNS), Oak Ridge National Laboratory", in Proc. Int. Conf. on Nuclear Data for Science and Technology, Beijing, China, 2019.</li>
+        <li>V. Jaiswal, L. Leal, N. Leclaire, F. Réal and V. Vallet, "Evaluation of thermal scattering law for light water based on new time-of-flight measurements at the Institut Laue-Langevin (ILL)", PHYTRA4 - The Fourth International Conference on Physics and Technology of Reactors and Applications. Marrakech, Morocco, September 17-19, 2018, on CD-ROM, GMTR, Rabat, Morocco, 2018.</li>
+        <li>V. Jaiswal and L. Leal, "Investigation of frequency spectrum of light water to generate thermal scattering law", PHYSOR 2018: Reactor Physics paving the way towards more efficient systems, Mexico, 2018.</li>
+        <li>V. Jaiswal et al., "Measurement of double differential cross-section of light water at high temperature and pressure to generate S(alpha, beta)", EPJ Web of Conferences 146, 13006, 2017.</li>
+      </ol>
     </section>
 
-    <!-- RESEARCH SECTION (Initially Hidden) -->
+    <!-- RESEARCH SECTION -->
     <section id="research" class="section">
-      <h2>Research</h2>
-      <p>Place your research topics here. (Hidden by default)</p>
+      <h2>Research Topics</h2>
+      <ul class="research-topics">
+        <li>
+          <h3>Nuclear Cross Section Data</h3>
+          <p>Investigating the fundamental interactions of neutrons within nuclear reactors, focusing on the measurement, processing, and evaluation of nuclear cross section data essential for reactor design and safety analysis.</p>
+        </li>
+        <li>
+          <h3>Thermal Scattering Law</h3>
+          <p>Developing thermal scattering laws for various materials to accurately simulate neutron behavior at thermal energies, improving the fidelity of neutron transport calculations.</p>
+        </li>
+        <li>
+          <h3>Uncertainty Analysis</h3>
+          <p>Assessing the impact of uncertainties in nuclear data on reactor physics calculations, contributing to the optimization of nuclear safety and performance.</p>
+        </li>
+        <li>
+          <h3>Neutronics</h3>
+          <p>Advancing the field of neutronics through detailed simulations and experiments to enhance the understanding of neutron behavior and reactor kinetics.</p>
+        </li>
+        <li>
+          <h3>Criticality Safety Research</h3>
+          <p>Focusing on the prevention of accidental criticality in nuclear facilities by analyzing and ensuring the safe handling, storage, and disposal of fissile materials.</p>
+        </li>
+      </ul>
     </section>
 
-    <!-- ACHIEVEMENTS SECTION (Initially Hidden) -->
+    <!-- ACHIEVEMENTS SECTION -->
     <section id="achievements" class="section">
       <h2>Achievements</h2>
-      <p>Place your achievements here. (Hidden by default)</p>
+      <ul>
+        <li>Secured funding for a European project on nuclear data uncertainty assessment to improve thermal scattering cross sections, 2023.</li>
+        <li>Received the coveted beam-time award at Oak Ridge National Laboratory (ORNL, US) for conducting pivotal experiments on two occasions, in 2018 and 2020.</li>
+        <li>Presented work at various international conferences on nuclear energy, highlighting expertise in thermal neutron scattering.</li>
+        <li>Successfully obtained a full-time permanent position in the public nuclear energy sector in France, 2019.</li>
+        <li>Best Poster Award at the ISIS Neutron Training Course, Oxfordshire, United Kingdom, 2016.</li>
+        <li>Department of Atomic Energy Graduate Fellowship (DGFS) for research at IGCAR, India, 2014.</li>
+        <li>Fully Funded One-Year EGIDE (French Government) Scholarship to pursue a Master's degree in France, 2012-2013.</li>
+        <li>Department of Science and Technology (DST) Fellowship, India, 2011-2014.</li>
+        <li>All-India Rank 12 in the entrance examination for Master's in Physics, University of Delhi, 2011.</li>
+      </ul>
     </section>
 
-    <!-- CONTACT SECTION (Initially Hidden) -->
+    <!-- CONTACT SECTION -->
     <section id="contact" class="section">
-      <h2>Contact</h2>
-      <p>Place your contact info here. (Hidden by default)</p>
+      <h2>Contact Me</h2>
+      <p>You can reach out to me through the following contact methods:</p>
+      <ul>
+        <li>Email: <a href="mailto:vaibhav.jaiswal@irsn.fr">vaibhav.jaiswal@irsn.fr</a></li>
+        <li>LinkedIn: <a href="https://www.linkedin.com/in/vaibhav-jaiswal" target="_blank">vaibhav-jaiswal</a></li>
+      </ul>
     </section>
   </main>
 
@@ -245,12 +438,14 @@
     <p>&copy; 2023 - Vaibhav Jaiswal</p>
   </footer>
 
-  <!-- Simple JavaScript to switch between sections -->
+  <!-- JS: Tab switching + Light/Dark theme toggling -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const navLinks = document.querySelectorAll("nav ul li a[data-section]");
       const sections = document.querySelectorAll(".section");
+      const themeToggleBtn = document.getElementById("theme-toggle");
 
+      // TAB SWITCHING
       navLinks.forEach(link => {
         link.addEventListener("click", e => {
           e.preventDefault();
@@ -260,8 +455,21 @@
           sections.forEach(sec => sec.classList.remove("active"));
 
           // Show the clicked one
-          document.getElementById(target).classList.add("active");
+          const targetSection = document.getElementById(target);
+          if (targetSection) {
+            targetSection.classList.add("active");
+          }
         });
+      });
+
+      // THEME TOGGLE
+      themeToggleBtn.addEventListener("click", () => {
+        document.body.classList.toggle("light-theme");
+        if (document.body.classList.contains("light-theme")) {
+          themeToggleBtn.textContent = "Switch to Dark Theme";
+        } else {
+          themeToggleBtn.textContent = "Switch to Light Theme";
+        }
       });
     });
   </script>
