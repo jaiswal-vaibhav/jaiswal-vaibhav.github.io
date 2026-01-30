@@ -3,338 +3,158 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Vaibhav Jaiswal</title>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <!-- Inline CSS -->
-  <style>
-    /* Basic reset and layout */
-    * {
-      margin: 0; 
-      padding: 0; 
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Roboto', sans-serif; 
-      background-color: #f5f5f5; 
-      color: #333; 
-      min-height: 100vh;
-      display: flex; 
-      flex-direction: column;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-
-    /* Header */
-    header {
-      background: #222; 
-      color: #fff; 
-      padding: 10px 20px;
-      display: flex; 
-      align-items: center; 
-      justify-content: space-between;
-    }
-    /* Left side is hidden (commented out) in snippet, so let's keep an empty area or optional H1 */
-    header h1 {
-      font-size: 1.2rem;
-    }
-
-    /* Header Right (Search + Theme Toggle) */
-    .header-right {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    #search-bar {
-      padding: 6px 8px;
-      border: 1px solid #555;
-      border-radius: 4px;
-      background-color: #444;
-      color: #fff;
-    }
-    #search-bar:focus {
-      outline: none;
-      border-color: #2a9d8f; /* Teal accent on focus */
-    }
-
-    #theme-toggle {
-      background-color: #444;
-      color: #fff;
-      border: 1px solid #555;
-      border-radius: 4px;
-      padding: 6px 12px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    #theme-toggle:hover {
-      background-color: #2a9d8f; 
-    }
-
-    /* Navigation */
-    nav ul {
-      list-style: none; 
-      display: flex; 
-      gap: 20px;
-    }
-    nav ul li a {
-      color: #fff; 
-      text-decoration: none; 
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-    nav ul li a:hover {
-      color: #2a9d8f; /* teal accent */
-    }
-
-    /* Main container for tabbed sections */
-    main {
-      flex: 1; 
-      display: flex; 
-      justify-content: center; 
-      align-items: flex-start;
-      padding: 20px;
-    }
-
-    /* Section styling (all hidden except the active one) */
-    .section {
-      display: none; 
-      max-width: 900px;
-      width: 100%;
-      background: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    .section.active {
-      display: block;
-    }
-
-    /* Intro (Home) Section */
-    .intro-section {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    .profile-pic {
-      width: 250px;
-      height: 250px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 20px;
-      border: 2px solid #2a9d8f;
-    }
-    .designation {
-      font-weight: bold;
-      color: #555;
-      margin-bottom: 20px;
-    }
-    .social-icons {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      margin-bottom: 20px;
-    }
-    .social-icons img {
-      width: 28px;
-      height: 28px;
-    }
-
-    /* Section Titles */
-    .section h2 {
-      margin-bottom: 10px;
-      border-bottom: 2px solid #2a9d8f;
-      display: inline-block;
-      padding-bottom: 5px;
-    }
-
-    /* Some spacing and formatting */
-    p, li {
-      line-height: 1.6;
-      margin-bottom: 10px;
-    }
-    ul {
-      margin-left: 20px;
-    }
-    ol {
-      margin-left: 20px;
-    }
-
-    /* Education items */
-    .education-item {
-      display: flex;
-      margin-bottom: 20px;
-    }
-    .education-year {
-      flex-basis: 20%;
-      font-weight: bold;
-      color: #2a9d8f;
-    }
-    .education-details {
-      flex-basis: 80%;
-    }
-    .education-details h3 {
-      margin-bottom: 5px;
-    }
-
-    /* Teaching interns list */
-    .supervised-interns {
-      list-style: none;
-      margin-left: 0;
-      padding-left: 0;
-    }
-    .supervised-interns li {
-      margin-bottom: 10px;
-    }
-    .supervised-interns .year {
-      color: #2a9d8f;
-      margin-right: 5px;
-      font-weight: bold;
-    }
-
-    /* Footer */
-    footer {
-      background: #222; 
-      color: #fff; 
-      text-align: center; 
-      padding: 10px;
-    }
-
-    /* Light Theme */
-    .light-theme {
-      background-color: #fafafa; 
-      color: #333;
-    }
-    .light-theme header {
-      background-color: #eaeaea;
-      color: #333;
-    }
-    .light-theme #search-bar {
-      background-color: #fff;
-      color: #333;
-      border-color: #ccc;
-    }
-    .light-theme #theme-toggle {
-      background-color: #eaeaea;
-      color: #333;
-    }
-    .light-theme nav ul li a {
-      color: #333;
-    }
-    .light-theme nav ul li a:hover {
-      color: #2a9d8f;
-    }
-    .light-theme .section {
-      background-color: #fff;
-      color: #333;
-    }
-    .light-theme footer {
-      background-color: #eaeaea;
-      color: #333;
-    }
-  </style>
+  <title>Dr. Vaibhav Jaiswal - Nuclear Research Engineer</title>
+  <meta name="description" content="Dr. Vaibhav Jaiswal - Senior Researcher in Reactor Physics and Neutronics at ASNR, France">
+  
+  <!-- Google Fonts - Distinctive pairing -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <!-- Left side could be your logo/title if desired -->
-    <div>
-      <!-- <h1>Vaibhav Jaiswal</h1> -->
+    <div class="logo">
+      <img src="assets/photo_VJ.jpg" alt="VJ" class="logo-photo">
     </div>
-    <div class="header-right">
-      <input type="text" id="search-bar" placeholder="Search...">
-      <button id="theme-toggle">Switch to Light Theme</button>
-    </div>
+    
     <nav>
       <ul>
-        <!-- data-section attribute => controls which section to show -->
-        <li><a href="#" data-section="home">Home</a></li>
-        <li><a href="#" data-section="education">Education</a></li>
-        <li><a href="#" data-section="teaching">Teaching</a></li>
-        <li><a href="#" data-section="publications">Publications</a></li>
-        <li><a href="#" data-section="research">Research Topics</a></li>
-        <li><a href="#" data-section="achievements">Achievements</a></li>
-        <li><a href="#" data-section="contact">Contact Me</a></li>
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#teaching" class="nav-link">Teaching</a></li>
+        <li><a href="#publications" class="nav-link">Publications</a></li>
+        <li><a href="#research" class="nav-link">Research</a></li>
+        <li><a href="#achievements" class="nav-link">Achievements</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
     </nav>
+
+    <div class="header-right">
+      <div class="search-container">
+        <input type="text" id="search-bar" placeholder="Search..." aria-label="Search website">
+        <button id="search-btn" aria-label="Search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.35-4.35"></path>
+          </svg>
+        </button>
+      </div>
+      <button id="theme-toggle" aria-label="Toggle theme">
+        <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+    </div>
   </header>
 
   <main>
-    <!-- HOME / INTRO SECTION -->
+    <!-- HOME SECTION -->
     <section id="home" class="section active">
+      <div class="home-container">
       <div class="intro-section">
-        <img src="assets/Photo_VJ.jpg" alt="Vaibhav Jaiswal" class="profile-pic">
-        <h1>Vaibhav Jaiswal</h1>
-        <p class="designation">Research Engineer at ASNR, France</p>
+        <div class="profile-pic-container">
+          <img src="assets/photo_VJ.jpg" alt="Dr. Vaibhav Jaiswal" class="profile-pic">
+          <div class="profile-ring"></div>
+        </div>
+        
+        <h1>Dr. Vaibhav Jaiswal</h1>
+        <p class="designation">Senior Researcher in Reactor Physics and Neutronics at ASNR, France</p>
+        
         <div class="social-icons">
-          <a href="mailto:vaibhav.jaiswal@irsn.fr">
-            <img src="assets/message_icon.png" alt="Email">
+          <a href="mailto:vaibhav.jaiswal@asnr.fr" aria-label="Email" class="social-link">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
           </a>
-          <a href="https://scholar.google.com/citations?user=OXhBC3QAAAAJ&hl=en">
-            <img src="assets/google_scholar_icon.png" alt="Google Scholar">
+          <a href="https://scholar.google.com/citations?user=OXhBC3QAAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar" class="social-link">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/>
+            </svg>
           </a>
-          <a href="https://www.linkedin.com/in/vaibhav-jaiswal/">
-            <img src="assets/linkedin_icon.png" alt="LinkedIn">
+          <a href="https://www.linkedin.com/in/vaibhav-jaiswal/" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-link">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </a>
+          <a href="https://orcid.org/0000-0001-6367-8458" target="_blank" rel="noopener" aria-label="ORCID" class="social-link">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.016-5.325 5.016h-3.919V7.416zm1.444 1.303v7.444h2.297c2.359 0 4.053-1.666 4.053-3.722 0-2.025-1.628-3.722-4.053-3.722h-2.297z"/>
+            </svg>
+          </a>
+          <a href="https://asnr.hal.science/search/index/q/*/authIdHal_s/vaibhav-jaiswal" target="_blank" rel="noopener" aria-label="HAL" class="social-link">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <rect width="24" height="24" rx="2" fill="currentColor"/>
+              <text x="12" y="17" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">HAL</text>
+            </svg>
           </a>
         </div>
       </div>
-      <!-- About Me -->
-      <h2>About Me</h2>
-      <p>
-       Dr. Vaibhav Jaiswal is an experienced research engineer at ASNR, the French authority for nuclear safety and radioprotection. His work centers on advancing nuclear cross section data and Monte Carlo simulations, with particular emphasis on thermal scattering for moderator materials. Bolstered by a PhD in Nuclear Engineering and extensive international collaborations, he contributes to cutting-edge solutions in reactor physics, nuclear safety, and data evaluation.
-      </p>
-      <p>
-      Originally from India, Dr. Jaiswal obtained a Bachelor’s in Physics and an M.Tech in Nuclear Science and Technology at the University of Delhi. Seeking broader exposure to nuclear sciences, he relocated to France, where he earned a specialized Master’s in Nuclear Engineering from the National Institute for Nuclear Science and Technology (INSTN) and subsequently completed his PhD at the University of Lille. His doctoral work on time-of-flight experiments and atomistic simulations continues to inform his efforts in refining thermal scattering cross section data for research and criticality safety.
-      </p>
-      <p>
-      An active participant in the Joint Evaluated Fission and Fusion (JEFF) community, Dr. Jaiswal frequently engages with international teams to share findings and shape global nuclear research. He has presented his work at major conferences, secured European funding for nuclear data projects, and led collaborative studies involving organizations like Oak Ridge National Laboratory (US). With a commitment to mentorship, he also supervises graduate students and interns, blending technical expertise with a passion for fostering the next generation of nuclear scientists.
-      </p>
-      <p>
+
+      <div class="content-section">
+        <h2>About</h2>
+        <p>
+          Dr. Vaibhav Jaiswal is a senior researcher at the neutronics and criticality safety department of the French Authority for Nuclear Safety and Radiation Protection (ASNR). He has more than ten years of experience in nuclear data, covering differential experiments, nuclear data evaluation, data processing, and benchmarking for reactor physics and criticality safety studies.
+        </p>
+        <p>
+          His research work began at ASNR (then IRSN), where he carried out a PhD on the development of thermal scattering cross-section data. In this work, he performed double-differential time-of-flight measurements and conducted atomistic simulations to produce high-fidelity nuclear data for neutron transport applications. After completing his PhD, he continued his research as a post-doctoral fellow at the French Alternative Energies and Atomic Energy Commission (CEA), and later returned to ASNR as a researcher.
+        </p>
+        <p>
+          He holds a bachelor's degree in Physics and an M. Tech in Nuclear Science and Technology from the University of Delhi, India, as well as a master's degree in Nuclear Engineering from the French National Institute for Nuclear Science and Technology (INSTN) and CentraleSupélec, one of France's leading engineering schools.
+        </p>
+        <p>
+          Dr. Jaiswal's expertise lies in nuclear data development, qualification, and the integration of evaluated data into neutron transport simulations. He also works on uncertainty quantification, sensitivity analysis, and the development and processing of covariance matrices to support the propagation of uncertainties in neutronic calculations. He collaborates with research institutes and international partners, contributing to the JEFF project and several expert groups. He has contributed to national and international R&D initiatives, and supervises PhD students, postdoctoral researchers, and interns working in reactor physics and neutronics.
+        </p>
+      </div>
+      </div>
     </section>
 
-
-
-
-
-    
     <!-- EDUCATION SECTION -->
     <section id="education" class="section">
       <h2>Education</h2>
-      <!-- Education Item 1 -->
-      <div class="education-item">
-        <div class="education-year">2015 - 2018</div>
-        <div class="education-details">
-          <h3>PhD in Nuclear Engineering</h3>
-          <p>University of Lille, France</p>
-          <p>Focused on nuclear data measurements, processing, and evaluation, setting a foundation for expertise in nuclear science and technology.</p>
+      <div class="timeline">
+        <div class="education-item">
+          <div class="education-year">2015 – 2018</div>
+          <div class="education-details">
+            <h3>PhD in Nuclear Engineering</h3>
+            <p class="institution">University of Lille, France</p>
+          </div>
         </div>
-      </div>
 
-      <!-- Education Item 2 -->
-      <div class="education-item">
-        <div class="education-year">2012 - 2013</div>
-        <div class="education-details">
-          <h3>Master's in Nuclear Energy</h3>
-          <p>CentraleSupélec, France</p>
-          <p>Obtained from one of the top French Grandes Écoles, demonstrating advanced knowledge in the nuclear energy domain.</p>
+        <div class="education-item">
+          <div class="education-year">2012 – 2013</div>
+          <div class="education-details">
+            <h3>Master's in Nuclear Energy</h3>
+            <p class="institution">CentraleSupélec, France</p>
+          </div>
         </div>
-      </div>
 
-      <!-- Education Item 3 -->
-      <div class="education-item">
-        <div class="education-year">2011 - 2014</div>
-        <div class="education-details">
-          <h3>Master's in Technology - Nuclear Science and Technology</h3>
-          <p>University of Delhi, India</p>
-          <p>Attained from one of the top universities in India, underlining a robust technical background in nuclear science.</p>
+        <div class="education-item">
+          <div class="education-year">2011 – 2014</div>
+          <div class="education-details">
+            <h3>M.Tech - Nuclear Science and Technology</h3>
+            <p class="institution">University of Delhi, India</p>
+          </div>
         </div>
-      </div>
 
-      <!-- Education Item 4 -->
-      <div class="education-item">
-        <div class="education-year">2008 - 2011</div>
-        <div class="education-details">
-          <h3>Bachelor's of Science - Physics (Honours)</h3>
-          <p>University of Delhi, India</p>
-          <p>Providing a solid foundation in the fundamental aspects of physics.</p>
+        <div class="education-item">
+          <div class="education-year">2008 – 2011</div>
+          <div class="education-details">
+            <h3>B.Sc Physics (Honours)</h3>
+            <p class="institution">University of Delhi, India</p>
+          </div>
         </div>
       </div>
     </section>
@@ -342,22 +162,32 @@
     <!-- TEACHING SECTION -->
     <section id="teaching" class="section">
       <h2>Teaching & Supervision</h2>
-      <ul class="supervised-interns">
+      <p class="section-intro">Supervised graduate students and interns in nuclear data research and analysis:</p>
+      <ul class="supervised-list">
         <li>
-          <span class="year">2019:</span>
-          <a href="link-to-edwin-manuscript" target="_blank">Edwin Cordova</a>
+          <span class="year">Ongoing</span>
+          <span class="name">Aitor Fernandez Bengoechea</span>
+          <span class="role">PostDoc Supervision</span>
         </li>
         <li>
-          <span class="year">2020:</span>
-          <a href="link-to-bashir-manuscript" target="_blank">Bashir Hassaine</a>
+          <span class="year">2023-2025</span>
+          <span class="name">Pierre Solé</span>
+          <span class="role">PhD Thesis Supervision</span>
         </li>
         <li>
-          <span class="year">2023:</span>
-          <a href="link-to-guillaume-manuscript" target="_blank">Guillaume Boutes</a>
+          <span class="year">2023</span>
+          <span class="name">Guillaume Boutes</span>
+          <span class="role">Internship Supervision</span>
         </li>
         <li>
-          <span class="year">2023:</span>
-          <a href="link-to-pierre-thesis" target="_blank">PhD Thesis of Pierre Sole</a>
+          <span class="year">2020</span>
+          <span class="name">Bashir Hassaine</span>
+          <span class="role">Internship Supervision</span>
+        </li>
+        <li>
+          <span class="year">2019</span>
+          <span class="name">Edwin Cordova</span>
+          <span class="role">Internship Supervision</span>
         </li>
       </ul>
     </section>
@@ -365,116 +195,204 @@
     <!-- PUBLICATIONS SECTION -->
     <section id="publications" class="section">
       <h2>Publications</h2>
-      <ol>
-        <li>Vaibhav Jaiswal, “An Optimization Approach to Improve Thermal Scattering Law Using Experimental Total Cross Section Data” (submitted), International Conference on Physics of Reactors (PHYSOR), April 21–24, San Francisco, 2024.</li>
-        <li>Pierre Sole, Vaibhav Jaiswal and Cedric Jouanne, “On the Possible use of Propagation of Resonance Parameters Uncertainties Using the R-Matrix Formalism”, International Conference on Physics of Reactors (PHYSOR), April 21–24, San Francisco, 2024.</li>
-        <li>Pierre Sole, Vaibhav Jaiswal, Cédric Jouanne, and Vivian Salino, “Assessment of covariance processing with GAIA for nuclear data uncertainty propagation”, International Workshop On Nuclear Data Evaluation for Reactor Applications (WONDER-2023), 2023.</li>
-        <li>N. Leclaire and V. Jaiswal, “The Plutonium Temperature Effect Program”, Journal of Nuclear Engineering 4 (3), 535-551, 2023.</li>
-        <li>Vaibhav Jaiswal et al., "Development of Thermal Scattering Law for Hydrogen Fluoride for Criticality Safety Applications", Nuclear Criticality Safety Division Topical Meeting (NCSD), Anaheim, CA, June 12-16, Pages 47-56, 2022.</li>
-        <li>Luiz Leal, Nicolas Leclaire and Vaibhav Jaiswal, “Impact of Missing Resonance Levels on Benchmark Calculations”, Nuclear Criticality Safety Division Topical Meeting (NCSD), Anaheim, CA, June 12-16, Pages 30-37, 2022.</li>
-        <li>Arthur Pignet, Luiz Leal and Vaibhav Jaiswal, “Cross Section Doppler Broadening prediction using Physically Informed Deep Neural Networks”, PHYSOR 2022, Pittsburgh, Pennsylvania, USA, May 15th -20th, 2022.</li>
-        <li>Romain Vuiart, Mariya Brovchenko, Julien Taforeau, Vaibhav Jaiswal and Eric Dumonteil, "A versatile methodology for reactor pressure vessel aging assessments", Nuclear Science and Engineering, Vol. 196, No. 4, 455-477, 2021.</li>
-        <li>R. Ichou, V. Jaiswal, L. Leal, F. Réal and V. Vallet, "Testing thermal scattering law for light water at 600 K using VESTA 2.2.0 depletion calculations", ICNC 2019 - 11th International conference on Nuclear Criticality Safety, Paris, France, 2019.</li>
-        <li>Vaibhav Jaiswal, Luiz Leal, and Alexander I. Kolesnikov, "Analysis of the time-of-flight scattering cross section data for light water measured at the SEQUOIA spectrometer", in Proc. Int. Conf. on Nuclear Data for Science and Technology, Beijing, China, 2019.</li>
-        <li>Luiz Leal, Vaibhav Jaiswal, and Alexander I. Kolesnikov, "High-resolution neutron time-of-flight measurements for light water at the Spallation Neutron Source (SNS), Oak Ridge National Laboratory", in Proc. Int. Conf. on Nuclear Data for Science and Technology, Beijing, China, 2019.</li>
-        <li>V. Jaiswal, L. Leal, N. Leclaire, F. Réal and V. Vallet, "Evaluation of thermal scattering law for light water based on new time-of-flight measurements at the Institut Laue-Langevin (ILL)", PHYTRA4 - The Fourth International Conference on Physics and Technology of Reactors and Applications. Marrakech, Morocco, September 17-19, 2018, on CD-ROM, GMTR, Rabat, Morocco, 2018.</li>
-        <li>V. Jaiswal and L. Leal, "Investigation of frequency spectrum of light water to generate thermal scattering law", PHYSOR 2018: Reactor Physics paving the way towards more efficient systems, Mexico, 2018.</li>
-        <li>V. Jaiswal et al., "Measurement of double differential cross-section of light water at high temperature and pressure to generate S(alpha, beta)", EPJ Web of Conferences 146, 13006, 2017.</li>
+      <p class="section-intro">Selected publications in nuclear data, thermal scattering, and reactor physics:</p>
+      <ol class="publications-list">
+        <li><strong>Vaibhav Jaiswal</strong>, and Pierre Solé, "<a href="https://doi.org/10.1080/00295639.2025.2530301" target="_blank" rel="noopener">An Optimization Approach to Improve Thermal Scattering Law Using Experimental Total Cross-Section Data.</a>", Nuclear Science and Engineering: 1-20, 2025.</li>
+        
+        <li>Pierre Solé, <strong>Vaibhav Jaiswal</strong>, and Cédric Jouanne, "<a href="https://doi.org/10.1080/00295639.2025.2508040" target="_blank" rel="noopener">Quantification and Propagation of Uncertainties in R-Matrix Limited Resonance Parameters.</a>", Nuclear Science and Engineering: 1-17, 2025.</li>
+        
+        <li>Petillon Barthélémi, Peron Arthur, Romain Vuiart, <strong>Vaibhav Jaiswal</strong>, Mariya Brovchenko, "<a href="https://hal.science/hal-05111043" target="_blank" rel="noopener">CALINS: A New ASNR Software for Sensitivity and Uncertainty Analysis in Nuclear Criticality Safety Evaluations</a>", NCSD 2025 - Nuclear Criticality Safety Division 2025 Conference, American Nuclear Society (ANS), Sep 2025, Austin (TX), United States, 2025.</li>
+        
+        <li><strong>Vaibhav Jaiswal</strong>, "<a href="https://hal.science/hal-05454932" target="_blank" rel="noopener">Impact Of Thermal Scattering Law on UOX And MOX Configurations of the CREOLE Benchmark</a>", 16th Nuclear Data For Science And Technology Conference, June 22-27, Madrid, 2025 (in-progress).</li>
+        
+        <li><strong>Vaibhav Jaiswal</strong>, Pierre Solé, Aparna Allannavar Basavraja, Romain Vuiart, "<a href="https://hal.science/hal-05454918" target="_blank" rel="noopener">Uncertainty Driven Approach For Enhanced Criticality Safety Studies</a>", 16th Nuclear Data For Science And Technology Conference, June 22-27, Madrid, 2025 (in-progress).</li>
+        
+        <li>Pierre Solé, <strong>Vaibhav Jaiswal</strong>, "Estimation of Uncertainties on Thermal Scattering Cross-Section of Light Water at High Temperatures", 16th Nuclear Data For Science And Technology Conference, June 22-27, Madrid, 2025 (in-progress).</li>
+        
+        <li>Pierre Solé, <strong>Vaibhav Jaiswal</strong>, Cédric Jouanne, "Sampling Unresolved Resonance Parameters to Quantify Uncertainty on Probability Tables", 16th Nuclear Data For Science And Technology Conference, June 22-27, Madrid, 2025 (in-progress).</li>
+        
+        <li>M. Brovchenko, B. Dechenaux, <strong>V. Jaiswal</strong>, P. Solé, S. Araki, S. Gunji, K. Suyama, "Heterogeneous critical experiments in STACY facility with high sensitivity to water thermal scattering law", 16th Nuclear Data For Science And Technology Conference, June 22-27, Madrid, 2025 (in-progress).</li>
+        
+        <li>P. Solé, <strong>V. Jaiswal</strong>, A. B. Allannavar, C. Jouanne, B. Petillon, and M. Brovchenko, "<a href="https://doi.org/10.1051/epjconf/202430207012" target="_blank" rel="noopener">Investigation of uncertainty propagation in the resolved resonance range</a>", EPJ Web of Conferences. Vol. 302. EDP Sciences, 2024.</li>
+        
+        <li>Pierre Solé, <strong>Vaibhav Jaiswal</strong>, Cédric Jouanne, and Vivian Salino, "<a href="https://doi.org/10.1051/epjconf/202429405001" target="_blank" rel="noopener">Assessment of covariance processing with GAIA for nuclear data uncertainty propagation.</a>", In EPJ Web of Conferences, vol. 294, p. 05001. EDP Sciences, 2024.</li>
+        
+        <li><strong>Vaibhav Jaiswal</strong>, "<a href="https://doi.org/10.13182/PHYSOR24-43335" target="_blank" rel="noopener">An Optimization Approach to Improve Thermal Scattering Law Using Experimental Total Cross Section Data</a>", International Conference on Physics of Reactors (PHYSOR), April 21–24, San Francisco, 2024.</li>
+        
+        <li>Pierre Solé, <strong>Vaibhav Jaiswal</strong>, and Cedric Jouanne, "<a href="https://doi.org/10.13182/PHYSOR24-43558" target="_blank" rel="noopener">On the Possible Use of Propagation of Resonance Parameters Uncertainties Using the R-Matrix Formalism</a>", International Conference on Physics of Reactors (PHYSOR), April 21–24, San Francisco, 2024.</li>
+        
+        <li>Pierre Solé, <strong>Vaibhav Jaiswal</strong>, Cédric Jouanne, and Vivian Salino, "Assessment of covariance processing with GAIA for nuclear data uncertainty propagation", International Workshop On Nuclear Data Evaluation for Reactor Applications (WONDER-2023), 2023.</li>
+        
+        <li>N. Leclaire and <strong>V. Jaiswal</strong>, "<a href="https://doi.org/10.3390/jne4030035" target="_blank" rel="noopener">The Plutonium Temperature Effect Program,</a>" Journal of Nuclear Engineering, 4 (3), 535-551, 2023.</li>
+        
+        <li><strong>Vaibhav Jaiswal</strong> et al., "Development of Thermal Scattering Law for Hydrogen Fluoride for Criticality Safety Applications," Nuclear Criticality Safety Division Topical Meeting (NCSD), Anaheim, CA, June 12-16, Pages 47-56, 2022.</li>
+        
+        <li>Luiz Leal, Nicolas Leclaire and <strong>Vaibhav Jaiswal</strong>, "<a href="https://doi.org/10.13182/T126-37409" target="_blank" rel="noopener">Impact of Missing Resonance Levels on Benchmark Calculations</a>", Nuclear Criticality Safety Division Topical Meeting (NCSD), Anaheim, CA, June 12-16, Pages 30-37, 2022.</li>
+        
+        <li>Arthur Pignet, Luiz Leal and <strong>Vaibhav Jaiswal</strong>, "<a href="https://doi.org/10.48550/arXiv.2208.07224" target="_blank" rel="noopener">Cross Section Doppler Broadening prediction using Physically Informed Deep Neural Networks</a>", PHYSOR 2022, Pittsburgh, Pennsylvania, USA, May 15th-20th, 2022.</li>
+        
+        <li>Romain Vuiart, Mariya Brovchenko, Julien Taforeau, <strong>Vaibhav Jaiswal</strong>, and Eric Dumonteil, "<a href="https://doi.org/10.1080/00295639.2021.1991761" target="_blank" rel="noopener">A Versatile Methodology for Reactor Pressure Vessel Aging Assessments,</a>" Nuclear Science and Engineering, Vol. 196, No. 4, 455-477, 2021.</li>
+        
+        <li>R. Ichou, <strong>V. Jaiswal</strong>, L. Leal, F. Réal, V. Vallet, "<a href="https://hal.science/hal-02463773" target="_blank" rel="noopener">Testing thermal scattering law for light water at 600 K using VESTA 2.2.0 depletion calculations</a>", ICNC 2019 - 11th International conference on Nuclear Criticality Safety, Paris, France, 2019.</li>
+        
+        <li><strong>Vaibhav Jaiswal</strong>, Luiz Leal, and Alexander I. Kolesnikov, "<a href="https://doi.org/10.1051/epjconf/202023914007" target="_blank" rel="noopener">Analysis of the time-of-flight scattering cross section data for light water measured at the SEQUOIA spectrometer</a>", in Proc. Int. Conf. on Nuclear Data for Science and Technology, Beijing, China, 2019.</li>
+        
+        <li>Luiz Leal, <strong>Vaibhav Jaiswal</strong>, and Alexander I. Kolesnikov, "<a href="https://doi.org/10.1051/epjconf/202023914005" target="_blank" rel="noopener">High-resolution neutron time-of-flight measurements for light water at the Spallation Neutron Source (SNS), Oak Ridge National Laboratory</a>", in Proc. Int. Conf. on Nuclear Data for Science and Technology, Beijing, China, 2019.</li>
+        
+        <li><strong>V. Jaiswal</strong>, L. Leal, N. Leclaire, F. Réal, V. Vallet, "<a href="https://hal.science/hal-02377307" target="_blank" rel="noopener">Evaluation of thermal scattering law for light water based on new time-of-flight measurements at the Institut Laue-Langevin (ILL)</a>", PHYTRA4 - The Fourth International Conference on Physics and Technology of Reactors and Applications, Marrakech, Morocco, September 17-19, 2018.</li>
+        
+        <li><strong>V. Jaiswal</strong>, L. Leal, "Investigation of frequency spectrum of light water to generate thermal scattering law", PHYSOR 2018: Reactor Physics paving the way towards more efficient systems, Mexico, 2018.</li>
+        
+        <li><strong>V. Jaiswal</strong>, L. Leal et al., "<a href="https://doi.org/10.1051/epjconf/201714613006" target="_blank" rel="noopener">Measurement of double differential cross-section of light water at high temperature and pressure to generate S(α,β)</a>", EPJ Web of Conferences 146, 13006, 2017.</li>
       </ol>
     </section>
 
     <!-- RESEARCH SECTION -->
     <section id="research" class="section">
       <h2>Research Topics</h2>
-      <ul class="research-topics">
-        <li>
+      <div class="research-grid">
+        <div class="research-card">
+          <div class="research-icon">⚛️</div>
           <h3>Nuclear Cross Section Data</h3>
-          <p>Investigating the fundamental interactions of neutrons within nuclear reactors, focusing on the measurement, processing, and evaluation of nuclear cross section data essential for reactor design and safety analysis.</p>
-        </li>
-        <li>
+          <p>Investigating neutron interactions within nuclear reactors, focusing on measurement, processing, and evaluation of cross section data essential for reactor design and safety analysis.</p>
+        </div>
+
+        <div class="research-card">
+          <div class="research-icon">🌡️</div>
           <h3>Thermal Scattering Law</h3>
           <p>Developing thermal scattering laws for various materials to accurately simulate neutron behavior at thermal energies, improving the fidelity of neutron transport calculations.</p>
-        </li>
-        <li>
+        </div>
+
+        <div class="research-card">
+          <div class="research-icon">📊</div>
           <h3>Uncertainty Analysis</h3>
           <p>Assessing the impact of uncertainties in nuclear data on reactor physics calculations, contributing to the optimization of nuclear safety and performance.</p>
-        </li>
-        <li>
+        </div>
+
+        <div class="research-card">
+          <div class="research-icon">🔬</div>
           <h3>Neutronics</h3>
-          <p>Advancing the field of neutronics through detailed simulations and experiments to enhance the understanding of neutron behavior and reactor kinetics.</p>
-        </li>
-        <li>
+          <p>Advancing neutronics through detailed simulations and experiments to enhance the understanding of neutron behavior and reactor kinetics.</p>
+        </div>
+
+        <div class="research-card">
+          <div class="research-icon">🛡️</div>
           <h3>Criticality Safety Research</h3>
-          <p>Focusing on the prevention of accidental criticality in nuclear facilities by analyzing and ensuring the safe handling, storage, and disposal of fissile materials.</p>
-        </li>
-      </ul>
+          <p>Focusing on the prevention of accidental criticality in nuclear facilities by analyzing and ensuring safe handling, storage, and disposal of fissile materials.</p>
+        </div>
+      </div>
     </section>
 
     <!-- ACHIEVEMENTS SECTION -->
     <section id="achievements" class="section">
       <h2>Achievements</h2>
-      <ul>
-        <li>Secured funding for a European project on nuclear data uncertainty assessment to improve thermal scattering cross sections, 2023.</li>
-        <li>Received the coveted beam-time award at Oak Ridge National Laboratory (ORNL, US) for conducting pivotal experiments on two occasions, in 2018 and 2020.</li>
-        <li>Presented work at various international conferences on nuclear energy, highlighting expertise in thermal neutron scattering.</li>
-        <li>Successfully obtained a full-time permanent position in the public nuclear energy sector in France, 2019.</li>
-        <li>Best Poster Award at the ISIS Neutron Training Course, Oxfordshire, United Kingdom, 2016.</li>
-        <li>Department of Atomic Energy Graduate Fellowship (DGFS) for research at IGCAR, India, 2014.</li>
-        <li>Fully Funded One-Year EGIDE (French Government) Scholarship to pursue a Master's degree in France, 2012-2013.</li>
-        <li>Department of Science and Technology (DST) Fellowship, India, 2011-2014.</li>
-        <li>All-India Rank 12 in the entrance examination for Master's in Physics, University of Delhi, 2011.</li>
+      <ul class="achievements-list">
+        <li>
+          <span class="achievement-year">2023</span>
+          <span class="achievement-text">Secured funding for a European project on nuclear data uncertainty assessment to improve thermal scattering cross sections</span>
+        </li>
+        <li>
+          <span class="achievement-year">2020</span>
+          <span class="achievement-text">Received beam-time award at Oak Ridge National Laboratory (ORNL, US) for conducting pivotal experiments (second award)</span>
+        </li>
+        <li>
+          <span class="achievement-year">2019</span>
+          <span class="achievement-text">Successfully obtained full-time permanent position in the public nuclear energy sector in France</span>
+        </li>
+        <li>
+          <span class="achievement-year">2018</span>
+          <span class="achievement-text">Received beam-time award at Oak Ridge National Laboratory (ORNL, US) for conducting pivotal experiments (first award)</span>
+        </li>
+        <li>
+          <span class="achievement-year">2016</span>
+          <span class="achievement-text">Best Poster Award at the ISIS Neutron Training Course, Oxfordshire, United Kingdom</span>
+        </li>
+        <li>
+          <span class="achievement-year">2014</span>
+          <span class="achievement-text">Department of Atomic Energy Graduate Fellowship (DGFS) for research at IGCAR, India</span>
+        </li>
+        <li>
+          <span class="achievement-year">2012</span>
+          <span class="achievement-text">Fully Funded One-Year EGIDE (French Government) Scholarship to pursue Master's degree in France</span>
+        </li>
+        <li>
+          <span class="achievement-year">2011</span>
+          <span class="achievement-text">Department of Science and Technology (DST) Fellowship, India</span>
+        </li>
+        <li>
+          <span class="achievement-year">2011</span>
+          <span class="achievement-text">All-India Rank 12 in the entrance examination for Master's in Physics, University of Delhi</span>
+        </li>
       </ul>
     </section>
 
     <!-- CONTACT SECTION -->
     <section id="contact" class="section">
-      <h2>Contact Me</h2>
-      <p>You can reach out to me through the following contact methods:</p>
-      <ul>
-        <li>Email: <a href="mailto:vaibhav.jaiswal@irsn.fr">vaibhav.jaiswal@asnr.fr</a></li>
-        <li>LinkedIn: <a href="https://www.linkedin.com/in/vaibhav-jaiswal" target="_blank">vaibhav-jaiswal</a></li>
-      </ul>
+      <h2>Contact</h2>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="contact-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </div>
+          <h3>Email</h3>
+          <a href="mailto:vaibhav.jaiswal@asnr.fr">vaibhav.jaiswal@asnr.fr</a>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </div>
+          <h3>LinkedIn</h3>
+          <a href="https://www.linkedin.com/in/vaibhav-jaiswal" target="_blank" rel="noopener">vaibhav-jaiswal</a>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+            </svg>
+          </div>
+          <h3>Google Scholar</h3>
+          <a href="https://scholar.google.com/citations?user=OXhBC3QAAAAJ&hl=en" target="_blank" rel="noopener">View Profile</a>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.016-5.325 5.016h-3.919V7.416zm1.444 1.303v7.444h2.297c2.359 0 4.053-1.666 4.053-3.722 0-2.025-1.628-3.722-4.053-3.722h-2.297z"/>
+            </svg>
+          </div>
+          <h3>ORCID</h3>
+          <a href="https://orcid.org/0000-0001-6367-8458" target="_blank" rel="noopener">0000-0001-6367-8458</a>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <rect width="24" height="24" rx="2" fill="currentColor"/>
+              <text x="12" y="17" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">HAL</text>
+            </svg>
+          </div>
+          <h3>HAL</h3>
+          <a href="https://asnr.hal.science/search/index/q/*/authIdHal_s/vaibhav-jaiswal" target="_blank" rel="noopener">View Publications</a>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 - Vaibhav Jaiswal</p>
+    <p>&copy; 2026 Dr. Vaibhav Jaiswal. All rights reserved.</p>
   </footer>
 
-  <!-- JS: Tab switching + Light/Dark theme toggling -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const navLinks = document.querySelectorAll("nav ul li a[data-section]");
-      const sections = document.querySelectorAll(".section");
-      const themeToggleBtn = document.getElementById("theme-toggle");
-
-      // TAB SWITCHING
-      navLinks.forEach(link => {
-        link.addEventListener("click", e => {
-          e.preventDefault();
-          const target = link.getAttribute("data-section");
-
-          // Hide all sections
-          sections.forEach(sec => sec.classList.remove("active"));
-
-          // Show the clicked one
-          const targetSection = document.getElementById(target);
-          if (targetSection) {
-            targetSection.classList.add("active");
-          }
-        });
-      });
-
-      // THEME TOGGLE
-      themeToggleBtn.addEventListener("click", () => {
-        document.body.classList.toggle("light-theme");
-        if (document.body.classList.contains("light-theme")) {
-          themeToggleBtn.textContent = "Switch to Dark Theme";
-        } else {
-          themeToggleBtn.textContent = "Switch to Light Theme";
-        }
-      });
-    });
-  </script>
+  <!-- External JavaScript -->
+  <script src="script.js"></script>
 </body>
 </html>
