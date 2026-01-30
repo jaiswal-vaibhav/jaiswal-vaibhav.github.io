@@ -1,712 +1,914 @@
-/* ===========================
-   Modern Dark/Light Theme CSS
-   =========================== */
+/* ===================================
+   Modern Scientific Design System
+   For Dr. Vaibhav Jaiswal's Website
+   =================================== */
 
-/* 1) Universal resets & box sizing */
+/* CSS Variables for theming */
+:root {
+  /* Dark theme colors */
+  --bg-primary: #0a0e27;
+  --bg-secondary: #141b3d;
+  --bg-card: #1a2142;
+  --text-primary: #e8eaf6;
+  --text-secondary: #b0b8d4;
+  --text-muted: #7d8ab0;
+  --accent-primary: #00d4ff;
+  --accent-secondary: #0099cc;
+  --accent-tertiary: #7c4dff;
+  --border-color: #2d3a61;
+  --shadow: rgba(0, 0, 0, 0.3);
+  --shadow-lg: rgba(0, 0, 0, 0.5);
+  
+  /* Typography */
+  --font-serif: 'DM Serif Display', Georgia, serif;
+  --font-sans: 'Work Sans', -apple-system, sans-serif;
+  
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+/* Light theme overrides */
+.light-theme {
+  --bg-primary: #f8f9fc;
+  --bg-secondary: #ffffff;
+  --bg-card: #ffffff;
+  --text-primary: #1a1a2e;
+  --text-secondary: #4a4a5e;
+  --text-muted: #7a7a8e;
+  --accent-primary: #0066cc;
+  --accent-secondary: #0052a3;
+  --accent-tertiary: #5e35b1;
+  --border-color: #e0e4f0;
+  --shadow: rgba(0, 0, 0, 0.08);
+  --shadow-lg: rgba(0, 0, 0, 0.15);
+}
+
+/* ===================================
+   Base Styles
+   =================================== */
+
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-/* 2) Default (Dark Theme) Colors & Fonts */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background-color: #1c1c1c; /* Slightly softer black */
-  color: #f4f4f4;            /* Light gray text for readability */
-  font-family: 'Roboto', sans-serif;
-  font-size: 18px;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color var(--transition-base), color var(--transition-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* 3) Header Styles */
+/* ===================================
+   Typography
+   =================================== */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-md);
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: var(--spacing-sm);
+}
+
+h2 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  margin-bottom: var(--spacing-lg);
+  position: relative;
+  display: inline-block;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-tertiary));
+  border-radius: 2px;
+}
+
+h3 {
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  margin-bottom: var(--spacing-sm);
+}
+
+p {
+  margin-bottom: var(--spacing-md);
+  color: var(--text-secondary);
+}
+
+a {
+  color: var(--accent-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--accent-secondary);
+  text-decoration: underline;
+}
+
+/* ===================================
+   Header
+   =================================== */
+
 header {
-  background-color: #2a2a2a; 
-  color: #ffffff;
-  padding: 10px 20px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  background-color: var(--bg-secondary);
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 12px var(--shadow);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  transition: background-color var(--transition-base);
 }
 
-/* 4) Header Right Section (Search + Theme Toggle) */
-.header-right {
+.logo {
   display: flex;
   align-items: center;
-  gap: 10px;
 }
 
-#search-bar {
-  padding: 6px 8px;
-  border: 1px solid #555;
-  border-radius: 4px;
-  background-color: #2a2a2a;
-  color: #fff;
-  transition: border-color 0.3s ease;
-}
-
-#search-bar:focus {
-  outline: none;
-  border-color: #2a9d8f; /* Teal accent on focus */
-}
-
-#theme-toggle {
-  background-color: #2a2a2a;
-  color: #f4f4f4;
-  border: 1px solid #555;
-  border-radius: 4px;
-  padding: 6px 12px;
+.logo-photo {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--accent-primary);
+  transition: transform var(--transition-base);
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
-#theme-toggle:hover {
-  background-color: #2a9d8f; 
+.logo-photo:hover {
+  transform: scale(1.1);
 }
 
-/* 5) Navigation Menu */
+.logo-initial {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent-primary);
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-tertiary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Navigation */
 nav ul {
   list-style: none;
   display: flex;
+  gap: 1.5rem;
   align-items: center;
-  gap: 20px;
 }
 
-nav ul li a {
-  color: #ffffff;
+nav ul li {
+  position: relative;
+}
+
+.nav-link {
+  color: var(--text-secondary);
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s ease;
+  font-size: 0.95rem;
+  padding: 0.5rem 0;
+  transition: color var(--transition-fast);
+  position: relative;
 }
 
-nav ul li a:hover {
-  color: #2a9d8f; /* Teal accent on hover */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-tertiary));
+  transition: width var(--transition-base);
 }
 
-/* 6) Intro Section Styles */
+.nav-link:hover,
+.nav-link.active {
+  color: var(--accent-primary);
+  text-decoration: none;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Header Right Section */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.search-container:focus-within {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1);
+}
+
+#search-bar {
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  width: 180px;
+  outline: none;
+}
+
+#search-bar::placeholder {
+  color: var(--text-muted);
+}
+
+#search-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color var(--transition-fast);
+}
+
+#search-btn:hover {
+  color: var(--accent-primary);
+}
+
+#theme-toggle {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+
+#theme-toggle:hover {
+  background-color: var(--accent-primary);
+  border-color: var(--accent-primary);
+  transform: scale(1.05);
+}
+
+#theme-toggle svg {
+  color: var(--text-secondary);
+  transition: color var(--transition-fast);
+}
+
+#theme-toggle:hover svg {
+  color: white;
+}
+
+.sun-icon {
+  display: none;
+}
+
+.light-theme .sun-icon {
+  display: block;
+}
+
+.moon-icon {
+  display: block;
+}
+
+.light-theme .moon-icon {
+  display: none;
+}
+
+/* ===================================
+   Main Content
+   =================================== */
+
+main {
+  flex: 1;
+  width: 100%;
+  margin: 0 auto;
+  padding: var(--spacing-xl) var(--spacing-md);
+}
+
+/* Section Visibility */
+.section {
+  display: none;
+  animation: fadeIn 0.5s ease;
+}
+
+.section.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===================================
+   Intro Section (Home)
+   =================================== */
+
+.home-container {
+  display: flex;
+  gap: var(--spacing-xl);
+  align-items: flex-start;
+}
+
 .intro-section {
+  flex: 0 0 350px;
   text-align: center;
-  padding: 40px 20px;
-  background: linear-gradient(160deg, #2a2a2a 0%, #1c1c1c 100%);
+  padding: var(--spacing-xl) 0;
+}
+
+.profile-pic-container {
+  position: relative;
+  display: inline-block;
+  margin-bottom: var(--spacing-lg);
 }
 
 .profile-pic {
   width: 250px;
   height: 250px;
   border-radius: 50%;
-  margin-bottom: 20px;
-  border: 2px solid #2a9d8f; 
   object-fit: cover;
+  border: 4px solid var(--accent-primary);
+  box-shadow: 0 8px 32px var(--shadow-lg);
+  position: relative;
+  z-index: 2;
+  transition: transform var(--transition-base);
 }
 
-.info-container h1 {
-  font-size: 2rem;
-  margin-bottom: 10px;
+.profile-pic:hover {
+  transform: scale(1.05);
 }
 
-.designation {
-  font-size: 1.1rem;
-  color: #bbbbbb;
-}
-
-.social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 15px;
-}
-
-.social-icons img {
-  width: 28px;
-  height: 28px;
-  filter: brightness(0) invert(1); /* Makes icons white if they're dark images */
-  transition: filter 0.3s ease;
-}
-
-.social-icons img:hover {
-  filter: brightness(0) invert(1) drop-shadow(0 0 4px #2a9d8f);
-}
-
-/* 7) Two-Column Layout in the Main Content */
-main {
-  flex: 1;
-  display: flex;
-  flex-direction: row;
-  margin: 20px;
-  gap: 20px;
-}
-
-.left-column, 
-.right-column {
-  flex: 1;
-  padding: 20px;
-  background-color: #2a2a2a;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-}
-
-/* If you want text justified in the main columns, remove text-align: left; below. */
-.left-column, .right-column {
-  text-align: left;
-  line-height: 1.6;
-}
-
-.right-column {
-  max-width: 900px;
-  margin: 0 auto; /* Centers the right column if left column is narrower */
-}
-
-/* 8) Section Titles */
-section h2 {
-  font-size: 1.6rem;
-  margin-bottom: 15px;
-  border-bottom: 2px solid #2a9d8f;
-  display: inline-block;
-  padding-bottom: 5px;
-}
-
-/* 9) Education Section */
-.education-item {
-  display: flex;
-  margin-bottom: 20px;
-}
-
-.education-year {
-  flex-basis: 25%;
-  font-weight: bold;
-  margin-right: 10px;
-  color: #2a9d8f; /* Teal highlight */
-}
-
-.education-details {
-  flex-basis: 75%;
-}
-
-.education-details h3 {
-  margin-bottom: 5px;
-  font-size: 1.2rem;
-  color: #f4f4f4;
-}
-
-.education-details p {
-  margin-bottom: 5px;
-  font-size: 0.95rem;
-  color: #cccccc;
-}
-
-/* 10) Teaching, Publications, etc. - Basic Lists */
-.supervised-interns {
-  list-style: none;
-  padding-left: 0;
-  margin-left: 0;
-}
-
-.supervised-interns li {
-  margin-bottom: 10px;
-  line-height: 1.5;
-}
-
-.supervised-interns .year {
-  color: #2a9d8f;
-  margin-right: 5px;
-  font-weight: bold;
-}
-
-/* Ordered list for publications, slightly indented */
-#publications ol {
-  margin-left: 20px;
-}
-
-/* 11) Achievements List */
-#achievements ul,
-#achievements ol {
-  margin-left: 20px;
-}
-
-#achievements li {
-  margin-bottom: 8px;
-  line-height: 1.5;
-}
-
-/* 12) Footer Styles */
-footer {
-  background-color: #2a2a2a;
-  color: #f4f4f4;
-  text-align: center;
-  padding: 15px 0;
-  font-size: 0.9rem;
-  box-shadow: 0 -1px 4px rgba(0,0,0,0.3);
-}
-
-/* ===========================
-   Light Theme Overrides
-   (Applied when body has .light-theme)
-   =========================== */
-.light-theme {
-  background-color: #fafafa; 
-  color: #333;
-}
-
-.light-theme header {
-  background-color: #f8f9fa;
-  color: #333;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.light-theme #search-bar {
-  background-color: #fff;
-  color: #333;
-  border-color: #ccc;
-}
-
-.light-theme #theme-toggle {
-  background-color: #eee;
-  color: #333;
-  border-color: #ccc;
-}
-
-.light-theme nav ul li a {
-  color: #333;
-}
-
-.light-theme nav ul li a:hover {
-  color: #2a9d8f;
-}
-
-.light-theme .intro-section {
-  background: linear-gradient(160deg, #f0f0f0 0%, #fafafa 100%);
-}
-
-.light-theme .left-column,
-.light-theme .right-column {
-  background-color: #ffffff;
-  color: #333;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-.light-theme .education-year {
-  color: #2a9d8f; /* Keep the teal highlight */
-}
-
-.light-theme footer {
-  background-color: #f2f2f2;
-  color: #333;
-}
-
-/* Adjust icons for light background */
-.light-theme .social-icons img {
-  filter: none; /* If your original icons are dark, you might want to invert them differently */
-}
-
-.light-theme .social-icons img:hover {
-  filter: drop-shadow(0 0 4px #2a9d8f);
-}
-
-/* ===========================
-   Media Queries (Responsive)
-   =========================== */
-
-/* For tablets and below */
-@media (max-width: 992px) {
-  body {
-    font-size: 16px;
-  }
-  
-  main {
-    flex-direction: column;
-  }
-  
-  .left-column, .right-column {
-    max-width: 100%;
-    margin: 0 0 20px;
-  }
-}
-
-/* For mobile screens */
-@media (max-width: 576px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px;
-  }
-
-  nav ul {
-    flex-direction: column;
-    margin-top: 10px;
-  }
-
-  nav ul li a {
-    font-size: 1rem;
-  }
-
-  #search-bar {
-    margin-bottom: 10px;
-  }
-
-  #theme-toggle {
-    margin-bottom: 10px;
-  }
-
-  .intro-section {
-    padding: 20px;
-  }
-}
-/* ===========================
-   Modern Dark/Light Theme CSS
-   =========================== */
-
-/* 1) Universal resets & box sizing */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-/* 2) Default (Dark Theme) Colors & Fonts */
-body {
-  background-color: #1c1c1c; /* Slightly softer black */
-  color: #f4f4f4;            /* Light gray text for readability */
-  font-family: 'Roboto', sans-serif;
-  font-size: 18px;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* 3) Header Styles */
-header {
-  background-color: #2a2a2a; 
-  color: #ffffff;
-  padding: 10px 20px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-/* 4) Header Right Section (Search + Theme Toggle) */
-.header-right {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-#search-bar {
-  padding: 6px 8px;
-  border: 1px solid #555;
-  border-radius: 4px;
-  background-color: #2a2a2a;
-  color: #fff;
-  transition: border-color 0.3s ease;
-}
-
-#search-bar:focus {
-  outline: none;
-  border-color: #2a9d8f; /* Teal accent on focus */
-}
-
-#theme-toggle {
-  background-color: #2a2a2a;
-  color: #f4f4f4;
-  border: 1px solid #555;
-  border-radius: 4px;
-  padding: 6px 12px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-#theme-toggle:hover {
-  background-color: #2a9d8f; 
-}
-
-/* 5) Navigation Menu */
-nav ul {
-  list-style: none;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-nav ul li a {
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-  color: #2a9d8f; /* Teal accent on hover */
-}
-
-/* 6) Intro Section Styles */
-.intro-section {
-  text-align: center;
-  padding: 40px 20px;
-  background: linear-gradient(160deg, #2a2a2a 0%, #1c1c1c 100%);
-}
-
-.profile-pic {
-  width: 250px;
-  height: 250px;
+.profile-ring {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: calc(100% + 20px);
+  height: calc(100% + 20px);
   border-radius: 50%;
-  margin-bottom: 20px;
-  border: 2px solid #2a9d8f; 
-  object-fit: cover;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-tertiary));
+  opacity: 0.2;
+  z-index: 1;
+  animation: pulse 3s ease-in-out infinite;
 }
 
-.info-container h1 {
-  font-size: 2rem;
-  margin-bottom: 10px;
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.2;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.3;
+  }
 }
 
 .designation {
-  font-size: 1.1rem;
-  color: #bbbbbb;
+  font-size: 1.25rem;
+  color: var(--accent-primary);
+  font-weight: 500;
+  margin-bottom: var(--spacing-lg);
 }
 
 .social-icons {
   display: flex;
   justify-content: center;
-  gap: 15px;
-  margin-top: 15px;
+  gap: 1.5rem;
+  margin-top: var(--spacing-lg);
 }
 
-.social-icons img {
-  width: 28px;
-  height: 28px;
-  filter: brightness(0) invert(1); /* Makes icons white if they're dark images */
-  transition: filter 0.3s ease;
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--bg-card);
+  border: 2px solid var(--border-color);
+  transition: all var(--transition-base);
 }
 
-.social-icons img:hover {
-  filter: brightness(0) invert(1) drop-shadow(0 0 4px #2a9d8f);
+.social-link:hover {
+  background-color: var(--accent-primary);
+  border-color: var(--accent-primary);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px var(--shadow);
 }
 
-/* 7) Two-Column Layout in the Main Content */
-main {
+.social-link img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+  transition: filter var(--transition-fast);
+}
+
+.light-theme .social-link img {
+  filter: brightness(0) invert(0.3);
+}
+
+.social-link:hover img {
+  filter: brightness(0) invert(1);
+}
+
+/* Content Section */
+.content-section {
   flex: 1;
-  display: flex;
-  flex-direction: row;
-  margin: 20px;
-  gap: 20px;
+  background-color: var(--bg-card);
+  padding: var(--spacing-xl);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px var(--shadow);
 }
 
-.left-column, 
-.right-column {
-  flex: 1;
-  padding: 20px;
-  background-color: #2a2a2a;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+/* ===================================
+   Education Section
+   =================================== */
+
+.timeline {
+  position: relative;
+  padding-left: 2rem;
 }
 
-/* If you want text justified in the main columns, remove text-align: left; below. */
-.left-column, .right-column {
-  text-align: left;
-  line-height: 1.6;
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--accent-primary), var(--accent-tertiary));
 }
 
-.right-column {
-  max-width: 900px;
-  margin: 0 auto; /* Centers the right column if left column is narrower */
-}
-
-/* 8) Section Titles */
-section h2 {
-  font-size: 1.6rem;
-  margin-bottom: 15px;
-  border-bottom: 2px solid #2a9d8f;
-  display: inline-block;
-  padding-bottom: 5px;
-}
-
-/* 9) Education Section */
 .education-item {
-  display: flex;
-  margin-bottom: 20px;
+  position: relative;
+  margin-bottom: var(--spacing-md);
+  padding: var(--spacing-md);
+  background-color: var(--bg-card);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px var(--shadow);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.education-item:hover {
+  transform: translateX(8px);
+  box-shadow: 0 8px 24px var(--shadow-lg);
+}
+
+.education-item::before {
+  content: '';
+  position: absolute;
+  left: -2.5rem;
+  top: 2rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--accent-primary);
+  border: 3px solid var(--bg-primary);
+  box-shadow: 0 0 0 3px var(--accent-primary);
 }
 
 .education-year {
-  flex-basis: 25%;
-  font-weight: bold;
-  margin-right: 10px;
-  color: #2a9d8f; /* Teal highlight */
-}
-
-.education-details {
-  flex-basis: 75%;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent-primary);
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .education-details h3 {
-  margin-bottom: 5px;
-  font-size: 1.2rem;
-  color: #f4f4f4;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-xs);
 }
 
-.education-details p {
-  margin-bottom: 5px;
-  font-size: 0.95rem;
-  color: #cccccc;
+.institution {
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-sm);
 }
 
-/* 10) Teaching, Publications, etc. - Basic Lists */
-.supervised-interns {
+/* ===================================
+   Teaching Section
+   =================================== */
+
+.section-intro {
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-lg);
+  font-size: 1.1rem;
+}
+
+.supervised-list {
+  list-style: none;
+  display: grid;
+  gap: var(--spacing-md);
+}
+
+.supervised-list li {
+  display: grid;
+  grid-template-columns: 80px 1fr auto;
+  gap: var(--spacing-md);
+  align-items: center;
+  padding: var(--spacing-md);
+  background-color: var(--bg-card);
+  border-radius: 8px;
+  border-left: 4px solid var(--accent-primary);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.supervised-list li:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.supervised-list .year {
+  font-weight: 600;
+  color: var(--accent-primary);
+  font-size: 0.9rem;
+}
+
+.supervised-list .name {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.supervised-list .role {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* ===================================
+   Publications Section
+   =================================== */
+
+.publications-list {
+  counter-reset: publication-counter;
   list-style: none;
   padding-left: 0;
-  margin-left: 0;
 }
 
-.supervised-interns li {
-  margin-bottom: 10px;
-  line-height: 1.5;
+.publications-list li {
+  counter-increment: publication-counter;
+  position: relative;
+  padding: var(--spacing-md) var(--spacing-md) var(--spacing-md) 4rem;
+  margin-bottom: var(--spacing-md);
+  background-color: var(--bg-card);
+  border-radius: 8px;
+  border-left: 4px solid var(--border-color);
+  transition: border-color var(--transition-fast), transform var(--transition-fast);
 }
 
-.supervised-interns .year {
-  color: #2a9d8f;
-  margin-right: 5px;
-  font-weight: bold;
+.publications-list li:hover {
+  border-left-color: var(--accent-primary);
+  transform: translateX(4px);
 }
 
-/* Ordered list for publications, slightly indented */
-#publications ol {
-  margin-left: 20px;
+.publications-list li::before {
+  content: counter(publication-counter);
+  position: absolute;
+  left: var(--spacing-md);
+  top: var(--spacing-md);
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-tertiary));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: white;
 }
 
-/* 11) Achievements List */
-#achievements ul,
-#achievements ol {
-  margin-left: 20px;
+/* ===================================
+   Research Section
+   =================================== */
+
+.research-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-lg);
 }
 
-#achievements li {
-  margin-bottom: 8px;
-  line-height: 1.5;
+.research-card {
+  padding: var(--spacing-lg);
+  background-color: var(--bg-card);
+  border-radius: 12px;
+  border: 2px solid var(--border-color);
+  transition: all var(--transition-base);
 }
 
-/* 12) Footer Styles */
-footer {
-  background-color: #2a2a2a;
-  color: #f4f4f4;
+.research-card:hover {
+  border-color: var(--accent-primary);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px var(--shadow-lg);
+}
+
+.research-icon {
+  font-size: 3rem;
+  margin-bottom: var(--spacing-md);
+  filter: grayscale(0.3);
+  transition: filter var(--transition-base);
+}
+
+.research-card:hover .research-icon {
+  filter: grayscale(0);
+}
+
+.research-card h3 {
+  margin-bottom: var(--spacing-sm);
+}
+
+.research-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* ===================================
+   Achievements Section
+   =================================== */
+
+.achievements-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.achievements-list li {
+  display: flex;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  background-color: var(--bg-card);
+  border-radius: 8px;
+  border-left: 4px solid var(--accent-tertiary);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.achievements-list li:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.achievement-year {
+  flex-shrink: 0;
+  font-weight: 600;
+  color: var(--accent-tertiary);
+  font-size: 0.95rem;
+  min-width: 60px;
+}
+
+.achievement-text {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ===================================
+   Contact Section
+   =================================== */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-lg);
+}
+
+.contact-card {
+  padding: var(--spacing-lg);
+  background-color: var(--bg-card);
+  border-radius: 12px;
+  border: 2px solid var(--border-color);
   text-align: center;
-  padding: 15px 0;
+  transition: all var(--transition-base);
+}
+
+.contact-card:hover {
+  border-color: var(--accent-primary);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px var(--shadow-lg);
+}
+
+.contact-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  margin-bottom: var(--spacing-md);
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-tertiary));
+  color: white;
+}
+
+.contact-card h3 {
+  margin-bottom: var(--spacing-sm);
+  font-size: 1.25rem;
+}
+
+.contact-card a {
+  font-size: 0.95rem;
+  word-break: break-word;
+}
+
+/* ===================================
+   Footer
+   =================================== */
+
+footer {
+  background-color: var(--bg-secondary);
+  color: var(--text-secondary);
+  text-align: center;
+  padding: var(--spacing-lg);
   font-size: 0.9rem;
-  box-shadow: 0 -1px 4px rgba(0,0,0,0.3);
+  box-shadow: 0 -2px 12px var(--shadow);
+  margin-top: var(--spacing-xl);
 }
 
-/* ===========================
-   Light Theme Overrides
-   (Applied when body has .light-theme)
-   =========================== */
-.light-theme {
-  background-color: #fafafa; 
-  color: #333;
-}
+/* ===================================
+   Responsive Design
+   =================================== */
 
-.light-theme header {
-  background-color: #f8f9fa;
-  color: #333;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.light-theme #search-bar {
-  background-color: #fff;
-  color: #333;
-  border-color: #ccc;
-}
-
-.light-theme #theme-toggle {
-  background-color: #eee;
-  color: #333;
-  border-color: #ccc;
-}
-
-.light-theme nav ul li a {
-  color: #333;
-}
-
-.light-theme nav ul li a:hover {
-  color: #2a9d8f;
-}
-
-.light-theme .intro-section {
-  background: linear-gradient(160deg, #f0f0f0 0%, #fafafa 100%);
-}
-
-.light-theme .left-column,
-.light-theme .right-column {
-  background-color: #ffffff;
-  color: #333;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-.light-theme .education-year {
-  color: #2a9d8f; /* Keep the teal highlight */
-}
-
-.light-theme footer {
-  background-color: #f2f2f2;
-  color: #333;
-}
-
-/* Adjust icons for light background */
-.light-theme .social-icons img {
-  filter: none; /* If your original icons are dark, you might want to invert them differently */
-}
-
-.light-theme .social-icons img:hover {
-  filter: drop-shadow(0 0 4px #2a9d8f);
-}
-
-/* ===========================
-   Media Queries (Responsive)
-   =========================== */
-
-/* For tablets and below */
 @media (max-width: 992px) {
-  body {
-    font-size: 16px;
-  }
-  
-  main {
-    flex-direction: column;
-  }
-  
-  .left-column, .right-column {
-    max-width: 100%;
-    margin: 0 0 20px;
-  }
-}
-
-/* For mobile screens */
-@media (max-width: 576px) {
   header {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px;
+    flex-wrap: wrap;
+    padding: 1rem;
+  }
+
+  nav {
+    order: 3;
+    width: 100%;
+    margin-top: var(--spacing-sm);
   }
 
   nav ul {
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    justify-content: center;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
+  }
+
+  .research-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  main {
+    padding: var(--spacing-lg) var(--spacing-sm);
+  }
+
+  .home-container {
     flex-direction: column;
-    margin-top: 10px;
-  }
-
-  nav ul li a {
-    font-size: 1rem;
-  }
-
-  #search-bar {
-    margin-bottom: 10px;
-  }
-
-  #theme-toggle {
-    margin-bottom: 10px;
   }
 
   .intro-section {
-    padding: 20px;
+    flex: 1;
+    width: 100%;
+  }
+
+  .content-section {
+    padding: var(--spacing-lg);
+  }
+
+  .profile-pic {
+    width: 200px;
+    height: 200px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  .supervised-list li {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xs);
+  }
+
+  .publications-list li {
+    padding-left: var(--spacing-md);
+    padding-top: 3rem;
+  }
+
+  .publications-list li::before {
+    left: 50%;
+    transform: translateX(-50%);
+    top: var(--spacing-sm);
+  }
+
+  .achievements-list li {
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+
+  .achievement-year {
+    min-width: auto;
   }
 }
+
+@media (max-width: 576px) {
+  #search-bar {
+    width: 120px;
+  }
+
+  .search-container {
+    padding: 0.4rem 0.6rem;
+  }
+
+  .timeline {
+    padding-left: 1.5rem;
+  }
+
+  .education-item::before {
+    left: -2rem;
+  }
+}
+
+/* ===================================
+   Utility Classes
+   =================================== */
+
+.text-center {
+  text-align: center;
+}
+
+.mt-sm { margin-top: var(--spacing-sm); }
+.mt-md { margin-top: var(--spacing-md); }
+.mt-lg { margin-top: var(--spacing-lg); }
+.mt-xl { margin-top: var(--spacing-xl); }
+
+.mb-sm { margin-bottom: var(--spacing-sm); }
+.mb-md { margin-bottom: var(--spacing-md); }
+.mb-lg { margin-bottom: var(--spacing-lg); }
+.mb-xl { margin-bottom: var(--spacing-xl); }
