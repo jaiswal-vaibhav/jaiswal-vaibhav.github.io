@@ -314,19 +314,19 @@ nav ul li {
 }
 
 .sun-icon {
-  display: none;
+  display: block;
 }
 
 .light-theme .sun-icon {
-  display: block;
+  display: none;
 }
 
 .moon-icon {
-  display: block;
+  display: none;
 }
 
 .light-theme .moon-icon {
-  display: none;
+  display: block;
 }
 
 /* Hamburger Menu */

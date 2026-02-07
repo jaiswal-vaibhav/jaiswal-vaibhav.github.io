@@ -43,6 +43,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 activeLink.classList.add('active');
             }
 
+            // Close mobile menu if open
+            const hamburger = document.getElementById('hamburger-menu');
+            const nav = document.getElementById('main-nav');
+            if (hamburger && nav) {
+                hamburger.classList.remove('active');
+                nav.classList.remove('active');
+            }
+
             // Smooth scroll to top of main content
             window.scrollTo({
                 top: 0,
