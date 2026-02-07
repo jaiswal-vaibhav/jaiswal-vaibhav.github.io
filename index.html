@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dr. Vaibhav Jaiswal - Nuclear Research Engineer</title>
+  <meta name="description" content="Dr. Vaibhav Jaiswal - Senior Researcher at ASNR, France">
+  <meta name="keywords" content="Nuclear Engineering, Reactor Physics, Neutronics, Nuclear Data, Thermal Scattering, Criticality Safety, ASNR">
+  <meta name="author" content="Dr. Vaibhav Jaiswal">
+  
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Dr. Vaibhav Jaiswal - Nuclear Research Engineer">
+  <meta property="og:description" content="Senior Researcher at ASNR, France">
+  <meta property="og:image" content="assets/photo_VJ.jpg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Dr. Vaibhav Jaiswal - Nuclear Research Engineer">
+  <meta name="twitter:description" content="Senior Researcher at ASNR, France">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="assets/photo_VJ.jpg">
+  <link rel="shortcut icon" type="image/jpeg" href="assets/photo_VJ.jpg">
+  
+  <!-- Google Fonts - Distinctive pairing -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Inline styles for read-more links -->
+  <style>
+    /* Global styles */
+    * {
+      box-sizing: border-box;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+    
+    body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      width: 100%;
+    }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    
+    .read-more-link {
+      color: #007bff;
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .read-more-link:hover {
+      color: #0056b3;
+      text-decoration: underline;
+    }
+    
+    /* About Section - Justified Text Alignment */
+    .content-section p {
+      text-align: justify;
+    }
+    
+    /* Home Section - Reduce bottom spacing */
+    #home.section {
+      padding-bottom: 30px;
+    }
+    
+    .home-container {
+      margin-bottom: 0;
+    }
+    
+    /* Talks Section */
+    .talks-list {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .talk-item {
+      background: #f8f9fa;
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 12px;
+      border-left: 4px solid #007bff;
+    }
+    .talk-header {
+      margin-bottom: 8px;
+    }
+    .talk-year {
+      display: inline-block;
+      background: #007bff;
+      color: white;
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 0.9em;
+      margin-bottom: 8px;
+    }
+    .talk-item h3 {
+      margin: 8px 0;
+      font-size: 1.1em;
+      color: #1a1a1a;
+      font-weight: 600;
+    }
+    .talk-location {
+      color: #333;
+      font-style: italic;
+      font-size: 0.95em;
+      font-weight: 500;
+    }
+    .talk-presentations {
+      margin: 8px 0 0 20px;
+    }
+    .talk-presentations li {
+      margin-bottom: 6px;
+      color: #333;
+    }
+    
+    /* Back to Top Button */
+    #back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+    #back-to-top:hover {
+      background: #0056b3;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    }
+    #back-to-top.show {
+      display: flex;
+    }
+    
+    /* Enhanced Footer */
+    footer {
+      background: #1a1a1a;
+      color: #fff;
+      padding: 40px 20px 20px;
+    }
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto 30px;
+    }
+    .footer-section h4 {
+      margin-bottom: 15px;
+      color: #007bff;
+    }
+    .footer-section p {
+      margin: 5px 0;
+      color: #ccc;
+    }
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+    }
+    .footer-section ul li {
+      margin: 8px 0;
+    }
+    .footer-section ul li a {
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.3s;
+      cursor: pointer;
+      pointer-events: auto;
+      position: relative;
+      z-index: 10;
+    }
+    .footer-section ul li a:hover {
+      color: #007bff;
+      text-decoration: underline;
+    }
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid #333;
+      color: #888;
+    }
+    
+    /* Hamburger menu - hidden by default on desktop */
+    .hamburger {
+      display: none;
+    }
+    
+    /* Mobile Responsive Styles */
+    @media (max-width: 768px) {
+      /* Header adjustments */
+      header {
+        flex-wrap: wrap;
+        padding: 12px 15px;
+        position: relative;
+        gap: 10px;
+      }
+      
+      .logo {
+        order: 1;
+        flex: 0 0 auto;
+      }
+      
+      .header-right {
+        order: 2;
+        flex: 1 1 auto;
+        gap: 8px;
+        justify-content: flex-end;
+        min-width: 0;
+      }
+      
+      .search-container {
+        padding: 0.4rem 0.6rem;
+        flex: 0 1 auto;
+        max-width: 140px;
+      }
+      
+      #search-bar {
+        width: 100px;
+        font-size: 0.85rem;
+      }
+      
+      #theme-toggle {
+        flex-shrink: 0;
+        width: 36px;
+        height: 36px;
+        padding: 0.4rem;
+      }
+      
+      /* Hamburger menu button */
+      .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+        z-index: 1001;
+        order: 3;
+        flex-shrink: 0;
+        min-width: 44px;
+        min-height: 44px;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .hamburger span {
+        width: 25px;
+        height: 3px;
+        background: var(--text-color, #333);
+        border-radius: 2px;
+        transition: all 0.3s ease;
+      }
+      
+      .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 8px);
+      }
+      
+      .hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+      
+      .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+      }
+      
+      /* Mobile navigation */
+      nav {
+        order: 4;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        background: var(--bg-color, white);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        z-index: 999;
+        transition: max-height 0.3s ease-in-out;
+      }
+      
+      nav.active {
+        max-height: 500px;
+        overflow-y: auto;
+      }
+      
+      nav ul {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+      }
+      
+      nav ul li {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #eee;
+      }
+      
+      nav ul li a {
+        display: block;
+        padding: 16px;
+        min-height: 44px;
+        font-size: 1rem;
+      }
+      
+      /* Home section mobile */
+      .home-container {
+        flex-direction: column;
+        padding: 20px;
+      }
+      
+      .intro-section,
+      .content-section {
+        width: 100%;
+      }
+      
+      .profile-pic {
+        width: 150px;
+        height: 150px;
+      }
+      
+      h1 {
+        font-size: 1.8em;
+      }
+      
+      /* Social icons mobile */
+      .social-icons {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      /* Education timeline mobile */
+      .timeline {
+        padding: 0 10px;
+      }
+    }
+    
+    /* Extra small mobile devices */
+    @media (max-width: 480px) {
+      header {
+        padding: 10px;
+      }
+      
+      .search-container {
+        max-width: 100px;
+      }
+      
+      #search-bar {
+        width: 70px;
+        font-size: 0.8rem;
+      }
+      
+      #theme-toggle {
+        width: 32px;
+        height: 32px;
+      }
+      
+      .hamburger {
+        padding: 6px;
+      }
+      
+      nav ul li a {
+        padding: 14px;
+        font-size: 0.95rem;
+      }
+      
+      .education-item {
+        padding: 10px;
+      }
+      
+      /* Teaching section mobile */
+      .supervised-list li {
+        padding: 10px;
+      }
+      
+      .supervision-header {
+        flex-direction: column;
+        gap: 8px;
+      }
+      
+      /* Publications mobile */
+      .publications-list {
+        padding-left: 20px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+      }
+      
+      .publications-list li {
+        font-size: 0.9em;
+        margin-bottom: 15px;
+        line-height: 1.6;
+      }
+      
+      .publications-list li a {
+        word-break: break-word;
+      }
+      
+      /* Talks section mobile */
+      .talk-item {
+        padding: 10px;
+      }
+      
+      .talk-item h3 {
+        font-size: 1em;
+      }
+      
+      .talk-presentations {
+        margin-left: 15px;
+        font-size: 0.9em;
+      }
+      
+      /* Research grid mobile */
+      .research-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+      
+      /* Achievements list mobile */
+      .achievements-list li {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 12px;
+      }
+      
+      .achievement-year {
+        margin-bottom: 5px;
+      }
+      
+      .achievement-text {
+        font-size: 0.9em;
+      }
+      
+      /* Contact grid mobile */
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+      
+      /* Footer mobile */
+      .footer-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        text-align: center;
+      }
+      
+      .footer-section ul {
+        padding: 0;
+      }
+      
+      /* Back to top button mobile */
+      #back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+      }
+      
+      /* Search container mobile */
+      .search-container {
+        max-width: 150px;
+      }
+      
+      .search-container input {
+        width: 100px;
+        font-size: 0.85em;
+      }
+      
+      /* Prevent horizontal scroll */
+      table {
+        display: block;
+        overflow-x: auto;
+        width: 100%;
+      }
+      
+      /* Touch-friendly buttons */
+      button, a {
+        min-height: 44px;
+        min-width: 44px;
+      }
+    }
+    
+    /* Tablet responsive */
+    @media (min-width: 769px) and (max-width: 1024px) {
+      nav ul {
+        gap: 10px;
+      }
+      
+      nav ul li a {
+        font-size: 0.9em;
+        padding: 8px 12px;
+      }
+      
+      .research-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    /* Ensure text is readable on all devices */
+    @media (max-width: 480px) {
+      body {
+        font-size: 14px;
+      }
+      
+      h2 {
+        font-size: 1.5em;
+      }
+      
+      h3 {
+        font-size: 1.2em;
+      }
+      
+      .section {
+        padding: 30px 15px;
+      }
+      
+      /* Fix viewport height issues on mobile */
+      .section {
+        min-height: auto;
+      }
+    }
+    
+    /* Fix for links and buttons to be more accessible */
+    a, button {
+      -webkit-tap-highlight-color: rgba(0, 123, 255, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="assets/photo_VJ.jpg" alt="VJ" class="logo-photo">
+    </div>
+    
+    <div class="header-right">
+      <div class="search-container">
+        <input type="text" id="search-bar" placeholder="Search..." aria-label="Search website">
+        <button id="search-btn" aria-label="Search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.35-4.35"></path>
+          </svg>
+        </button>
+      </div>
+
+      <button id="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+    </div>
+    
+    <button class="hamburger" id="hamburger-menu" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    
+    <nav id="main-nav">
+      <ul>
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#teaching" class="nav-link">Teaching</a></li>
+        <li><a href="#publications" class="nav-link">Publications</a></li>
+        <li><a href="#talks" class="nav-link">Talks</a></li>
+        <li><a href="#research" class="nav-link">Research</a></li>
+        <li><a href="#achievements" class="nav-link">Achievements</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HOME SECTION -->
+    <section id="home" class="section active">
+      <div class="home-container">
+      <div class="intro-section">
+        <div class="profile-pic-container">
+          <img src="assets/photo_VJ.jpg" alt="Dr. Vaibhav Jaiswal" class="profile-pic">
+          <div class="profile-ring"></div>
+        </div>
+        
+        <h1>Dr. Vaibhav Jaiswal</h1>
+        <p class="designation">Senior Researcher<br>ASNR, France</p>
+        
+        <div class="social-icons">
+          <a href="mailto:vaibhav.jaiswal@asnr.fr" aria-label="Email" class="social-link">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </a>
+          <a href="https://scholar.google.com/citations?user=OXhBC3QAAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar" class="social-link">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/>
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/in/vaibhav-jaiswal/" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-link">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </a>
+          <a href="https://orcid.org/0000-0001-6367-8458" target="_blank" rel="noopener" aria-label="ORCID" class="social-link">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.016-5.325 5.016h-3.919V7.416zm1.444 1.303v7.444h2.297c2.359 0 4.053-1.666 4.053-3.722 0-2.025-1.628-3.722-4.053-3.722h-2.297z"/>
+            </svg>
+          </a>
+          <a href="https://asnr.hal.science/search/index/q/*/authIdHal_s/vaibhav-jaiswal" target="_blank" rel="noopener" aria-label="HAL" class="social-link">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <rect width="24" height="24" rx="2" fill="currentColor"/>
+              <text x="12" y="17" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">HAL</text>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>About</h2>
+        <p>
+          I am a senior researcher at the neutronics and criticality safety department of the French Authority for Nuclear Safety and Radiation Protection (ASNR). I have more than ten years of experience in nuclear data, covering differential experiments, nuclear data evaluation, data processing, and benchmarking for reactor physics and criticality safety studies.
+        </p>
+        <p>
+          My research work began at ASNR (then IRSN), where I carried out a PhD on the development of thermal scattering cross-section data. In this work, I performed double-differential time-of-flight measurements and conducted atomistic simulations to produce high-fidelity nuclear data for neutron transport applications. After completing my PhD, I continued my research as a post-doctoral fellow at the French Alternative Energies and Atomic Energy Commission (CEA), and later returned to ASNR as a researcher.
+        </p>
+        <p>
+          I hold a bachelor's degree in Physics and an M. Tech in Nuclear Science and Technology from the University of Delhi, India, as well as a master's degree in Nuclear Engineering from the French National Institute for Nuclear Science and Technology (INSTN) and CentraleSupélec, one of France's leading engineering schools.
+        </p>
+        <p>
+          My expertise lies in nuclear data development, qualification, and the integration of evaluated data into neutron transport simulations. I also work on uncertainty quantification, sensitivity analysis, and the development and processing of covariance matrices to support the propagation of uncertainties in neutronic calculations. I collaborate with research institutes and international partners, contributing to the JEFF project and several expert groups. I have contributed to national and international R&D initiatives, and supervise PhD students, postdoctoral researchers, and interns working in reactor physics and neutronics.
+        </p>
+      </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION SECTION -->
+    <section id="education" class="section">
+      <h2>Education</h2>
+      <div class="timeline">
+        <div class="education-item phd-item">
+          <div class="education-year">2015 – 2018</div>
+          <div class="education-details">
+            <h3>PhD in Nuclear Engineering</h3>
+            <p class="institution">University of Lille, France</p>
+          </div>
+          <span class="read-more-link" onclick="toggleDetails(this)">View Thesis Details</span>
+          <div class="supervision-details phd-details">
+            <div class="phd-content">
+              <p><strong>Thesis Title:</strong> <a href="https://hal.science/tel-02390769/file/PhD_Vaibhav_Jaiswal.pdf" target="_blank" rel="noopener">Theoretical and Experimental Approach Towards Generation of Thermal Scattering Law for Light Water</a></p>
+              <p><strong>Supervised by:</strong> Dr. Luiz Leal, Dr. Florent Réal, Dr. Valérie Vallet</p>
+              <p class="thesis-description">This research focused on the development of high-fidelity thermal scattering cross-section data through double-differential time-of-flight measurements and atomistic simulations for neutron transport applications.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="education-item">
+          <div class="education-year">2012 – 2013</div>
+          <div class="education-details">
+            <h3>Master's in Nuclear Energy</h3>
+            <p class="institution">CentraleSupélec, France</p>
+          </div>
+        </div>
+
+        <div class="education-item">
+          <div class="education-year">2011 – 2014</div>
+          <div class="education-details">
+            <h3>M.Tech - Nuclear Science and Technology</h3>
+            <p class="institution">University of Delhi, India</p>
+          </div>
+        </div>
+
+        <div class="education-item">
+          <div class="education-year">2008 – 2011</div>
+          <div class="education-details">
+            <h3>B.Sc Physics (Honours)</h3>
+            <p class="institution">University of Delhi, India</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEACHING SECTION -->
+    <section id="teaching" class="section">
+      <h2>Teaching & Supervision</h2>
+      <p class="section-intro">Supervised graduate students and interns in nuclear data research and analysis:</p>
+      <ul class="supervised-list">
+        <li>
+          <div class="supervision-header">
+            <span class="year">Ongoing</span>
+            <span class="name">Aitor Fernandez Bengoechea</span>
+            <span class="role">PostDoc Supervision</span>
+          </div>
+          <span class="read-more-link" onclick="toggleDetails(this)">Read More</span>
+          <div class="supervision-details">
+            <p><strong>Subject:</strong> Propagation of Evaluated Nuclear Data Uncertainties in Reactor Physics and Criticality Safety Calculations</p>
+          </div>
+        </li>
+        <li>
+          <div class="supervision-header">
+            <span class="year">2023-2025</span>
+            <span class="name"><a href="https://theses.hal.science/tel-05414893" target="_blank" rel="noopener">Pierre Solé</a></span>
+            <span class="role">PhD Thesis Supervision</span>
+          </div>
+          <span class="read-more-link" onclick="toggleDetails(this)">Read More</span>
+          <div class="supervision-details">
+            <p><strong>Thesis Title:</strong> <a href="https://theses.hal.science/tel-05414893" target="_blank" rel="noopener">Uncertainties on Nuclear Data and Propagation in Neutronics and Criticality Safety Calculations</a></p>
+          </div>
+        </li>
+        <li>
+          <div class="supervision-header">
+            <span class="year">2024</span>
+            <span class="name">Aparna Basavaraja Allannavar</span>
+            <span class="role">Internship Supervision</span>
+          </div>
+          <span class="read-more-link" onclick="toggleDetails(this)">Read More</span>
+          <div class="supervision-details">
+            <p><strong>Subject:</strong> Towards a Better Understanding of Nuclear Data Uncertainty Quantification: A Comparison of Sandwich and Sampling Methods</p>
+          </div>
+        </li>
+        <li>
+          <div class="supervision-header">
+            <span class="year">2023</span>
+            <span class="name">Guillaume Boutes</span>
+            <span class="role">Internship Supervision</span>
+          </div>
+          <span class="read-more-link" onclick="toggleDetails(this)">Read More</span>
+          <div class="supervision-details">
+            <p><strong>Subject:</strong> TSL Uncertainty Analysis</p>
+          </div>
+        </li>
+        <li>
+          <div class="supervision-header">
+            <span class="year">2020</span>
+            <span class="name">Bashir Hassaine</span>
+            <span class="role">Internship Supervision</span>
+          </div>
+          <span class="read-more-link" onclick="toggleDetails(this)">Read More</span>
+          <div class="supervision-details">
+            <p><strong>Subject:</strong> Investigation of the Impact of Different Methodologies of TSL On-the-Fly on Reactor Physics and Criticality Safety Applications</p>
+          </div>
+        </li>
+        <li>
+          <div class="supervision-header">
+            <span class="year">2019</span>
+            <span class="name">Edwin Cordova</span>
+            <span class="role">Internship Supervision</span>
+          </div>
+          <span class="read-more-link" onclick="toggleDetails(this)">Read More</span>
+          <div class="supervision-details">
+            <p><strong>Subject:</strong> Development of TSL for Hydrogen Fluoride</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- PUBLICATIONS SECTION -->
+    <section id="publications" class="section">
+      <h2>Publications</h2>
+      <p class="section-intro">Selected publications in nuclear data, thermal scattering, and reactor physics:</p>
+      <ol class="publications-list">
+        <li><strong>Vaibhav Jaiswal</strong>, and Pierre Solé, "<a href="https://doi.org/10.1080/00295639.2025.2530301" target="_blank" rel="noopener">An Optimization Approach to Improve Thermal Scattering Law Using Experimental Total Cross-Section Data.</a>", Nuclear Science and Engineering: 1-20, 2025.</li>
+        
+        <li>Pierre Solé, <strong>Vaibhav Jaiswal</strong>, and Cédric Jouanne, "<a href="https://doi.org/10.1080/00295639.2025.2508040" target="_blank" rel="noopener">Quantification and Propagation of Uncertainties in R-Matrix Limited Resonance Parameters.</a>", Nuclear Science and Engineering: 1-17, 2025.</li>
+        
+        <li>Petillon Barthélémi, Peron Arthur, Romain Vuiart, <strong>Vaibhav Jaiswal</strong>, Mariya Brovchenko, "<a href="https://hal.science/hal-05111043" target="_blank" rel="noopener">CALINS: A New ASNR Software for Sensitivity and Uncertainty Analysis in Nuclear Criticality Safety Evaluations</a>", NCSD 2025 - Nuclear Criticality Safety Division 2025 Conference, American Nuclear Society (ANS), Sep 2025, Austin (TX), United States, 2025.</li>
+        
+        <li><strong>Vaibhav Jaiswal</strong>, "<a href="https://hal.science/hal-05454932" target="_blank" rel="noopener">Impact Of Thermal Scattering Law on UOX And MOX Configurations of the CREOLE Benchmark</a>", 16th Nuclear Data For Science And Technology Conference, June 22-27, Madrid, 2025 (in-progress).</li>
+        
+        <li><strong>Vaibhav Jaiswal</strong>, Pierre Solé, Aparna Allannavar Basavraja, Romain Vuiart, "<a href="https://hal.science/hal-05454918" target="_blank" rel="noopener">Uncertainty Driven Approach For Enhanced Criticality Safety Studies</a>", 16th Nuclear Data For Science And Technology Conference, June 22-27, Madrid, 2025 (in-progress).</li>
+        
+        <li>Pierre Solé, <strong>Vaibhav Jaiswal</strong>, "Estimation of Uncertainties on Thermal Scattering Cross-Section of Light Water at High Temperatures", 16th Nuclear Data For Science And Technology Conference, June 22-27, Madrid, 2025 (in-progress).</li>
+        
+        <li>Pierre Solé, <strong>Vaibhav Jaiswal</strong>, Cédric Jouanne, "Sampling Unresolved Resonance Parameters to Quantify Uncertainty on Probability Tables", 16th Nuclear Data For Science And Technology Conference, June 22-27, Madrid, 2025 (in-progress).</li>
+        
+        <li>M. Brovchenko, B. Dechenaux, <strong>V. Jaiswal</strong>, P. Solé, S. Araki, S. Gunji, K. Suyama, "Heterogeneous critical experiments in STACY facility with high sensitivity to water thermal scattering law", 16th Nuclear Data For Science And Technology Conference, June 22-27, Madrid, 2025 (in-progress).</li>
+        
+        <li>P. Solé, <strong>V. Jaiswal</strong>, A. B. Allannavar, C. Jouanne, B. Petillon, and M. Brovchenko, "<a href="https://doi.org/10.1051/epjconf/202430207012" target="_blank" rel="noopener">Investigation of uncertainty propagation in the resolved resonance range</a>", EPJ Web of Conferences. Vol. 302. EDP Sciences, 2024.</li>
+        
+        <li>Pierre Solé, <strong>Vaibhav Jaiswal</strong>, Cédric Jouanne, and Vivian Salino, "<a href="https://doi.org/10.1051/epjconf/202429405001" target="_blank" rel="noopener">Assessment of covariance processing with GAIA for nuclear data uncertainty propagation.</a>", In EPJ Web of Conferences, vol. 294, p. 05001. EDP Sciences, 2024.</li>
+        
+        <li><strong>Vaibhav Jaiswal</strong>, "<a href="https://doi.org/10.13182/PHYSOR24-43335" target="_blank" rel="noopener">An Optimization Approach to Improve Thermal Scattering Law Using Experimental Total Cross Section Data</a>", International Conference on Physics of Reactors (PHYSOR), April 21–24, San Francisco, 2024.</li>
+        
+        <li>Pierre Solé, <strong>Vaibhav Jaiswal</strong>, and Cedric Jouanne, "<a href="https://doi.org/10.13182/PHYSOR24-43558" target="_blank" rel="noopener">On the Possible Use of Propagation of Resonance Parameters Uncertainties Using the R-Matrix Formalism</a>", International Conference on Physics of Reactors (PHYSOR), April 21–24, San Francisco, 2024.</li>
+        
+        <li>Pierre Solé, <strong>Vaibhav Jaiswal</strong>, Cédric Jouanne, and Vivian Salino, "Assessment of covariance processing with GAIA for nuclear data uncertainty propagation", International Workshop On Nuclear Data Evaluation for Reactor Applications (WONDER-2023), 2023.</li>
+        
+        <li>N. Leclaire and <strong>V. Jaiswal</strong>, "<a href="https://doi.org/10.3390/jne4030035" target="_blank" rel="noopener">The Plutonium Temperature Effect Program,</a>" Journal of Nuclear Engineering, 4 (3), 535-551, 2023.</li>
+        
+        <li><strong>Vaibhav Jaiswal</strong> et al., "Development of Thermal Scattering Law for Hydrogen Fluoride for Criticality Safety Applications," Nuclear Criticality Safety Division Topical Meeting (NCSD), Anaheim, CA, June 12-16, Pages 47-56, 2022.</li>
+        
+        <li>Luiz Leal, Nicolas Leclaire and <strong>Vaibhav Jaiswal</strong>, "<a href="https://doi.org/10.13182/T126-37409" target="_blank" rel="noopener">Impact of Missing Resonance Levels on Benchmark Calculations</a>", Nuclear Criticality Safety Division Topical Meeting (NCSD), Anaheim, CA, June 12-16, Pages 30-37, 2022.</li>
+        
+        <li>Arthur Pignet, Luiz Leal and <strong>Vaibhav Jaiswal</strong>, "<a href="https://doi.org/10.48550/arXiv.2208.07224" target="_blank" rel="noopener">Cross Section Doppler Broadening prediction using Physically Informed Deep Neural Networks</a>", PHYSOR 2022, Pittsburgh, Pennsylvania, USA, May 15th-20th, 2022.</li>
+        
+        <li>Romain Vuiart, Mariya Brovchenko, Julien Taforeau, <strong>Vaibhav Jaiswal</strong>, and Eric Dumonteil, "<a href="https://doi.org/10.1080/00295639.2021.1991761" target="_blank" rel="noopener">A Versatile Methodology for Reactor Pressure Vessel Aging Assessments,</a>" Nuclear Science and Engineering, Vol. 196, No. 4, 455-477, 2021.</li>
+        
+        <li>R. Ichou, <strong>V. Jaiswal</strong>, L. Leal, F. Réal, V. Vallet, "<a href="https://hal.science/hal-02463773" target="_blank" rel="noopener">Testing thermal scattering law for light water at 600 K using VESTA 2.2.0 depletion calculations</a>", ICNC 2019 - 11th International conference on Nuclear Criticality Safety, Paris, France, 2019.</li>
+        
+        <li><strong>Vaibhav Jaiswal</strong>, Luiz Leal, and Alexander I. Kolesnikov, "<a href="https://doi.org/10.1051/epjconf/202023914007" target="_blank" rel="noopener">Analysis of the time-of-flight scattering cross section data for light water measured at the SEQUOIA spectrometer</a>", in Proc. Int. Conf. on Nuclear Data for Science and Technology, Beijing, China, 2019.</li>
+        
+        <li>Luiz Leal, <strong>Vaibhav Jaiswal</strong>, and Alexander I. Kolesnikov, "<a href="https://doi.org/10.1051/epjconf/202023914005" target="_blank" rel="noopener">High-resolution neutron time-of-flight measurements for light water at the Spallation Neutron Source (SNS), Oak Ridge National Laboratory</a>", in Proc. Int. Conf. on Nuclear Data for Science and Technology, Beijing, China, 2019.</li>
+        
+        <li><strong>V. Jaiswal</strong>, L. Leal, N. Leclaire, F. Réal, V. Vallet, "<a href="https://hal.science/hal-02377307" target="_blank" rel="noopener">Evaluation of thermal scattering law for light water based on new time-of-flight measurements at the Institut Laue-Langevin (ILL)</a>", PHYTRA4 - The Fourth International Conference on Physics and Technology of Reactors and Applications, Marrakech, Morocco, September 17-19, 2018.</li>
+        
+        <li><strong>V. Jaiswal</strong>, L. Leal, "Investigation of frequency spectrum of light water to generate thermal scattering law", PHYSOR 2018: Reactor Physics paving the way towards more efficient systems, Mexico, 2018.</li>
+        
+        <li><strong>V. Jaiswal</strong>, L. Leal et al., "<a href="https://doi.org/10.1051/epjconf/201714613006" target="_blank" rel="noopener">Measurement of double differential cross-section of light water at high temperature and pressure to generate S(α,β)</a>", EPJ Web of Conferences 146, 13006, 2017.</li>
+      </ol>
+    </section>
+
+    <!-- TALKS/PRESENTATIONS SECTION -->
+    <section id="talks" class="section">
+      <h2>Conference Presentations & Talks</h2>
+      <p class="section-intro">Selected talks and presentations at international conferences:</p>
+      <div class="talks-list">
+        <div class="talk-item">
+          <div class="talk-header">
+            <span class="talk-year">2026</span>
+            <h3>Nuclear Data Week 2025 - Analytical Methods Working Group (AMWG)</h3>
+            <p class="talk-location">Brookhaven National Laboratory (BNL), Brookhaven, USA | January 6-9, 2026</p>
+          </div>
+          <ul class="talk-presentations">
+            <li><a href="https://asnr.hal.science/hal-05455008v1" target="_blank" rel="noopener">Intercomparison of nuclear data processing</a></li>
+            <li><a href="https://asnr.hal.science/hal-05455000v1" target="_blank" rel="noopener">Towards TSL uncertainty</a></li>
+          </ul>
+        </div>
+        
+        <div class="talk-item">
+          <div class="talk-header">
+            <span class="talk-year">2025</span>
+            <h3>16th Nuclear Data For Science And Technology Conference (ND2025)</h3>
+            <p class="talk-location">Madrid, Spain | June 22-27, 2025</p>
+          </div>
+          <ul class="talk-presentations">
+            <li>Impact Of Thermal Scattering Law on UOX And MOX Configurations of the CREOLE Benchmark</li>
+            <li>Uncertainty Driven Approach For Enhanced Criticality Safety Studies</li>
+            <li>Estimation of Uncertainties on Thermal Scattering Cross-Section of Light Water at High Temperatures (with Pierre Solé)</li>
+            <li>Sampling Unresolved Resonance Parameters to Quantify Uncertainty on Probability Tables (with Pierre Solé)</li>
+            <li>Heterogeneous critical experiments in STACY facility with high sensitivity to water thermal scattering law (with Mariya Brovchenko)</li>
+          </ul>
+        </div>
+        
+        <div class="talk-item">
+          <div class="talk-header">
+            <span class="talk-year">2024</span>
+            <h3>International Conference on Physics of Reactors (PHYSOR)</h3>
+            <p class="talk-location">San Francisco, USA | April 21-24, 2024</p>
+          </div>
+          <ul class="talk-presentations">
+            <li>An Optimization Approach to Improve Thermal Scattering Law Using Experimental Total Cross Section Data</li>
+            <li>On the Possible Use of Propagation of Resonance Parameters Uncertainties Using the R-Matrix Formalism</li>
+          </ul>
+        </div>
+        
+        <div class="talk-item">
+          <div class="talk-header">
+            <span class="talk-year">2023</span>
+            <h3>International Workshop On Nuclear Data Evaluation for Reactor Applications (WONDER)</h3>
+            <p class="talk-location">2023</p>
+          </div>
+          <ul class="talk-presentations">
+            <li>Assessment of covariance processing with GAIA for nuclear data uncertainty propagation (with Pierre Solé)</li>
+          </ul>
+        </div>
+        
+        <div class="talk-item">
+          <div class="talk-header">
+            <span class="talk-year">2022</span>
+            <h3>Nuclear Criticality Safety Division Topical Meeting (NCSD)</h3>
+            <p class="talk-location">Anaheim, CA, USA | June 12-16, 2022</p>
+          </div>
+          <ul class="talk-presentations">
+            <li>Development of Thermal Scattering Law for Hydrogen Fluoride for Criticality Safety Applications</li>
+            <li>Impact of Missing Resonance Levels on Benchmark Calculations (with Luiz Leal)</li>
+          </ul>
+        </div>
+        
+        <div class="talk-item">
+          <div class="talk-header">
+            <span class="talk-year">2022</span>
+            <h3>PHYSOR 2022</h3>
+            <p class="talk-location">Pittsburgh, Pennsylvania, USA | May 15-20, 2022</p>
+          </div>
+          <ul class="talk-presentations">
+            <li>Cross Section Doppler Broadening prediction using Physically Informed Deep Neural Networks</li>
+          </ul>
+        </div>
+        
+        <div class="talk-item">
+          <div class="talk-header">
+            <span class="talk-year">2019</span>
+            <h3>International Conference on Nuclear Data for Science and Technology</h3>
+            <p class="talk-location">Beijing, China | 2019</p>
+          </div>
+          <ul class="talk-presentations">
+            <li>Analysis of the time-of-flight scattering cross section data for light water measured at the SEQUOIA spectrometer</li>
+            <li>High-resolution neutron time-of-flight measurements for light water at SNS</li>
+          </ul>
+        </div>
+        
+        <div class="talk-item">
+          <div class="talk-header">
+            <span class="talk-year">2019</span>
+            <h3>11th International conference on Nuclear Criticality Safety (ICNC)</h3>
+            <p class="talk-location">Paris, France | 2019</p>
+          </div>
+          <ul class="talk-presentations">
+            <li>Testing thermal scattering law for light water at 600 K using VESTA 2.2.0 depletion calculations</li>
+          </ul>
+        </div>
+        
+        <div class="talk-item">
+          <div class="talk-header">
+            <span class="talk-year">2018</span>
+            <h3>PHYTRA4 - Fourth International Conference on Physics and Technology of Reactors and Applications</h3>
+            <p class="talk-location">Marrakech, Morocco | September 17-19, 2018</p>
+          </div>
+          <ul class="talk-presentations">
+            <li>Evaluation of thermal scattering law for light water based on new time-of-flight measurements at the Institut Laue-Langevin (ILL)</li>
+          </ul>
+        </div>
+        
+        <div class="talk-item">
+          <div class="talk-header">
+            <span class="talk-year">2018</span>
+            <h3>PHYSOR 2018: Reactor Physics paving the way towards more efficient systems</h3>
+            <p class="talk-location">Mexico | 2018</p>
+          </div>
+          <ul class="talk-presentations">
+            <li>Investigation of frequency spectrum of light water to generate thermal scattering law</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESEARCH SECTION -->
+    <section id="research" class="section">
+      <h2>Research Topics</h2>
+      <div class="research-grid">
+        <div class="research-card">
+          <div class="research-icon">⚛️</div>
+          <h3>Nuclear Data Development & Processing</h3>
+          <p>Nuclear data processing, evaluation, and validation using codes such as NJOY, GAIA, and FUDGE for reactor physics and criticality safety applications.</p>
+        </div>
+
+        <div class="research-card">
+          <div class="research-icon">🌡️</div>
+          <h3>Thermal Scattering Law (TSL)</h3>
+          <p>Development and assessment of thermal scattering laws based on time-of-flight experiments and molecular dynamics simulations to improve neutron transport calculations at thermal energies.</p>
+        </div>
+
+        <div class="research-card">
+          <div class="research-icon">📊</div>
+          <h3>Uncertainty Quantification & Covariance</h3>
+          <p>Uncertainty quantification, covariance development, and uncertainty propagation for nuclear data in reactor physics and criticality safety applications.</p>
+        </div>
+
+        <div class="research-card">
+          <div class="research-icon">🔬</div>
+          <h3>Verification & Validation</h3>
+          <p>Cross-section verification and validation studies using ICSBEP and IRPhE benchmarks, supporting neutronics and criticality safety analyses.</p>
+        </div>
+
+        <div class="research-card">
+          <div class="research-icon">🌐</div>
+          <h3>International Nuclear Data Projects</h3>
+          <p>Active contribution to the JEFF nuclear data library and international expert groups, supporting the development and maintenance of nuclear data evaluations.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACHIEVEMENTS SECTION -->
+    <section id="achievements" class="section">
+      <h2>Achievements</h2>
+      <ul class="achievements-list">
+        <li>
+          <span class="achievement-year">2023</span>
+          <span class="achievement-text">Secured funding for a European project on nuclear data uncertainty assessment to improve thermal scattering cross sections</span>
+        </li>
+        <li>
+          <span class="achievement-year">2020</span>
+          <span class="achievement-text">Received beam-time award at Oak Ridge National Laboratory (ORNL, US) for conducting pivotal experiments (second award)</span>
+        </li>
+        <li>
+          <span class="achievement-year">2018</span>
+          <span class="achievement-text">Received beam-time award at Oak Ridge National Laboratory (ORNL, US) for conducting pivotal experiments (first award)</span>
+        </li>
+        <li>
+          <span class="achievement-year">2016</span>
+          <span class="achievement-text">Best Poster Award at the ISIS Neutron Training Course, Oxfordshire, United Kingdom</span>
+        </li>
+        <li>
+          <span class="achievement-year">2014</span>
+          <span class="achievement-text">Department of Atomic Energy Graduate Fellowship (DGFS) for research at IGCAR, India</span>
+        </li>
+        <li>
+          <span class="achievement-year">2012</span>
+          <span class="achievement-text">Fully Funded One-Year EGIDE (French Government) Scholarship to pursue Master's degree in France</span>
+        </li>
+        <li>
+          <span class="achievement-year">2011</span>
+          <span class="achievement-text">Department of Science and Technology (DST) Fellowship, India</span>
+        </li>
+        <li>
+          <span class="achievement-year">2011</span>
+          <span class="achievement-text">All-India Rank 12 in the entrance examination for Master's in Physics, University of Delhi</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="contact-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </div>
+          <h3>Email</h3>
+          <a href="mailto:vaibhav.jaiswal@asnr.fr">vaibhav.jaiswal@asnr.fr</a>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </div>
+          <h3>LinkedIn</h3>
+          <a href="https://www.linkedin.com/in/vaibhav-jaiswal/" target="_blank" rel="noopener">vaibhav-jaiswal</a>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+            </svg>
+          </div>
+          <h3>Google Scholar</h3>
+          <a href="https://scholar.google.com/citations?user=OXhBC3QAAAAJ&hl=en" target="_blank" rel="noopener">View Profile</a>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.016-5.325 5.016h-3.919V7.416zm1.444 1.303v7.444h2.297c2.359 0 4.053-1.666 4.053-3.722 0-2.025-1.628-3.722-4.053-3.722h-2.297z"/>
+            </svg>
+          </div>
+          <h3>ORCID</h3>
+          <a href="https://orcid.org/0000-0001-6367-8458" target="_blank" rel="noopener">0000-0001-6367-8458</a>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <rect width="24" height="24" rx="2" fill="currentColor"/>
+              <text x="12" y="17" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">HAL</text>
+            </svg>
+          </div>
+          <h3>HAL</h3>
+          <a href="https://asnr.hal.science/search/index/q/*/authIdHal_s/vaibhav-jaiswal" target="_blank" rel="noopener">View Publications</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" aria-label="Back to top" title="Back to top">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Dr. Vaibhav Jaiswal</h4>
+        <p>Senior Researcher</p>
+        <p>ASNR, France</p>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#research">Research</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="https://scholar.google.com/citations?user=OXhBC3QAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a></li>
+          <li><a href="https://www.linkedin.com/in/vaibhav-jaiswal/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://orcid.org/0000-0001-6367-8458" target="_blank" rel="noopener">ORCID</a></li>
+          <li><a href="https://asnr.hal.science/search/index/q/*/authIdHal_s/vaibhav-jaiswal" target="_blank" rel="noopener">HAL</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Dr. Vaibhav Jaiswal. All rights reserved. | Last updated: February 2026</p>
+    </div>
+  </footer>
+
+  <!-- External JavaScript -->
+  <script src="script.js"></script>
+  
+  <!-- Smooth Scroll for Anchor Links -->
+  <script>
+    // Wait for DOM to be ready
+    window.addEventListener('DOMContentLoaded', function() {
+      // Longer delay to ensure script.js loads and initializes first
+      setTimeout(function() {
+        // Get all anchor links
+        const allLinks = document.querySelectorAll('a[href^=\"#\"]');
+        
+        allLinks.forEach(function(link) {
+          // Use capture phase to run before other handlers
+          link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            
+            // Skip empty or just # links
+            if (!href || href === '#' || href === '') {
+              return;
+            }
+            
+            // Get target element
+            const targetId = href.substring(1);
+            const targetElement = document.getElementById(targetId);
+            
+            if (targetElement && targetElement.classList.contains('section')) {
+              // Prevent default behavior
+              e.preventDefault();
+              e.stopPropagation();
+              e.stopImmediatePropagation();
+              
+              // Remove active class from all sections
+              const allSections = document.querySelectorAll('.section');
+              allSections.forEach(function(section) {
+                section.classList.remove('active');
+              });
+              
+              // Add active class to target section
+              targetElement.classList.add('active');
+              
+              // Update nav links
+              const navLinks = document.querySelectorAll('.nav-link');
+              navLinks.forEach(function(navLink) {
+                navLink.classList.remove('active');
+                if (navLink.getAttribute('href') === href) {
+                  navLink.classList.add('active');
+                }
+              });
+              
+              // Scroll to top of the page (since sections are shown/hidden)
+              window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+              });
+              
+              // Update URL hash
+              if (window.history && window.history.pushState) {
+                window.history.pushState(null, null, href);
+              }
+              
+              return false;
+            }
+          }, true); // Use capture phase
+        });
+      }, 200);
+    });
+  </script>
+  
+  <!-- Mobile Navigation Toggle Script -->
+  <script>
+    // Mobile hamburger menu
+    const hamburger = document.getElementById('hamburger-menu');
+    const nav = document.getElementById('main-nav');
+    
+    if (hamburger && nav) {
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        nav.classList.toggle('active');
+      });
+      
+      // Close menu when clicking on a nav link
+      const navLinks = nav.querySelectorAll('.nav-link');
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          hamburger.classList.remove('active');
+          nav.classList.remove('active');
+        });
+      });
+    }
+  </script>
+  
+  <!-- Back to Top Button Script -->
+  <script>
+    // Back to Top Button functionality
+    const backToTopButton = document.getElementById('back-to-top');
+    
+    if (backToTopButton) {
+      window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+          backToTopButton.classList.add('show');
+        } else {
+          backToTopButton.classList.remove('show');
+        }
+      });
+      
+      backToTopButton.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    }
+  </script>
+</body>
+</html>
