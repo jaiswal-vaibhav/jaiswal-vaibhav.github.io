@@ -47,6 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const hamburger = document.getElementById('hamburger-menu');
             const nav = document.getElementById('main-nav');
             if (hamburger && nav) {
+                console.log("Closing mobile menu...");
                 hamburger.classList.remove('active');
                 nav.classList.remove('active');
             }

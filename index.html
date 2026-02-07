@@ -1218,15 +1218,6 @@
         hamburger.classList.toggle('active');
         nav.classList.toggle('active');
       });
-      
-      // Close menu when clicking on a nav link
-      const navLinks = nav.querySelectorAll('.nav-link');
-      navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-          hamburger.classList.remove('active');
-          nav.classList.remove('active');
-        });
-      });
     }
   </script>
   
