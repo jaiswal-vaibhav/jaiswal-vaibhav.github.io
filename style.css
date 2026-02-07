@@ -983,18 +983,21 @@ footer {
   
   /* Hide desktop navigation */
   nav {
-    display: none;
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
+    max-height: 0;
+    overflow: hidden;
     background-color: var(--bg-secondary);
     box-shadow: 0 4px 12px var(--shadow);
     z-index: 999;
+    transition: max-height 0.3s ease-in-out;
   }
   
   nav.active {
-    display: block;
+    max-height: 500px;
+    overflow-y: auto;
   }
   
   nav ul {
