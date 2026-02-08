@@ -925,26 +925,6 @@ footer {
     gap: 1rem;
   }
 
-  nav {
-    order: 3;
-    width: 100%;
-    margin-top: var(--spacing-sm);
-  }
-
-  nav ul {
-    flex-wrap: wrap;
-    gap: var(--spacing-sm);
-    justify-content: center;
-  }
-
-  .nav-link {
-    font-size: 0.9rem;
-    padding: 0.5rem 0.75rem;
-    min-height: 44px;
-    display: inline-flex;
-    align-items: center;
-  }
-
   .research-grid {
     grid-template-columns: 1fr;
   }
@@ -987,24 +967,25 @@ footer {
     display: none;
   }
   
-  /* Navigation moved outside header - always visible below header */
+  /* Navigation always visible below header on mobile */
   nav {
     display: block !important;
-    position: static;
+    position: relative !important;
     width: 100%;
     background-color: var(--bg-secondary);
     box-shadow: 0 2px 8px var(--shadow);
     padding: 0.5rem;
     margin: 0;
-    order: unset;
+    order: unset !important;
   }
   
   nav ul {
-    display: grid;
+    display: grid !important;
     grid-template-columns: repeat(4, 1fr);
     gap: 0.4rem;
     padding: 0;
     margin: 0;
+    flex-wrap: unset !important;
   }
   
   nav ul li {
@@ -1035,15 +1016,18 @@ footer {
 
   .home-container {
     flex-direction: column;
+    padding: 0 1rem;
   }
 
   .intro-section {
     flex: 1;
     width: 100%;
+    padding: var(--spacing-md) 0;
   }
 
   .content-section {
-    padding: var(--spacing-lg);
+    padding: var(--spacing-md);
+    width: 100%;
   }
 
   .profile-pic {
