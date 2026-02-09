@@ -67,6 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             const sectionId = this.getAttribute('href').substring(1); // Remove '#'
+            console.log("Nav link clicked! Section ID:", sectionId);
             showSection(sectionId);
         });
     });
