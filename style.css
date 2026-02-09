@@ -935,12 +935,12 @@ footer {
 }
 
 @media (max-width: 768px) {
+  /* Make header NOT sticky on mobile to avoid covering nav */
   header {
     padding: 12px 15px;
     flex-wrap: wrap;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    position: relative;
+    z-index: 10;
   }
   
   .logo {
@@ -980,7 +980,7 @@ footer {
     padding: 0.5rem;
     margin: 0;
     order: unset !important;
-    z-index: 998;
+    z-index: 5;
   }
   
   nav ul {
@@ -998,15 +998,18 @@ footer {
   
   nav ul li a {
     display: block;
-    padding: 0.6rem 0.25rem;
+    padding: 0.7rem 0.3rem;
     text-align: center;
     background-color: var(--bg-card);
     border: 1px solid var(--border-color);
     border-radius: 6px;
-    font-size: 0.8rem;
+    font-size: 0.82rem;
     transition: all 0.2s ease;
-    line-height: 1.2;
-    word-break: break-word;
+    line-height: 1.3;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   nav ul li a:hover,
