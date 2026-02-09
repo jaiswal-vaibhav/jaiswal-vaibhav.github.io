@@ -973,8 +973,7 @@ footer {
   /* Navigation always visible below header on mobile */
   nav {
     display: block !important;
-    position: sticky !important;
-    top: 0 !important;
+    position: relative !important;
     width: 100%;
     background-color: var(--bg-secondary);
     box-shadow: 0 2px 8px var(--shadow);
@@ -1021,7 +1020,6 @@ footer {
     padding: var(--spacing-md) var(--spacing-sm);
     position: relative;
     z-index: 1;
-    background-color: var(--bg-primary);
   }
 
   .home-container {
