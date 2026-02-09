@@ -938,6 +938,9 @@ footer {
   header {
     padding: 12px 15px;
     flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
   }
   
   .logo {
@@ -971,14 +974,14 @@ footer {
   nav {
     display: block !important;
     position: sticky !important;
-    top: 60px !important;
+    top: 0 !important;
     width: 100%;
     background-color: var(--bg-secondary);
     box-shadow: 0 2px 8px var(--shadow);
     padding: 0.5rem;
     margin: 0;
     order: unset !important;
-    z-index: 999;
+    z-index: 998;
   }
   
   nav ul {
@@ -1016,6 +1019,9 @@ footer {
 
   main {
     padding: var(--spacing-md) var(--spacing-sm);
+    position: relative;
+    z-index: 1;
+    background-color: var(--bg-primary);
   }
 
   .home-container {
